@@ -41,9 +41,9 @@ int8 uvc_camera_init(const char *path)
     cap.set(CAP_PROP_FRAME_HEIGHT, UVC_HEIGHT);                         // 设置摄像头高度
     cap.set(CAP_PROP_FPS, UVC_FPS);                                     // 显示屏幕帧率
 
-    printf("get uvc width = %d.\r\n",  cap.get(CAP_PROP_FRAME_WIDTH));
-    printf("get uvc height = %d.\r\n", cap.get(CAP_PROP_FRAME_HEIGHT));
-    printf("get uvc fps = %d.\r\n",    cap.get(CAP_PROP_FPS));
+    printf("get uvc width = %f.\r\n",  cap.get(CAP_PROP_FRAME_WIDTH));
+    printf("get uvc height = %f.\r\n", cap.get(CAP_PROP_FRAME_HEIGHT));
+    printf("get uvc fps = %f.\r\n",    cap.get(CAP_PROP_FPS));
 
     return 0;
 }
