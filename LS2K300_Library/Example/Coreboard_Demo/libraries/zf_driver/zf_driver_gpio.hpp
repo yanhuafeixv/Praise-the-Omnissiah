@@ -44,10 +44,10 @@
 #define ZF_GPIO_HALL_DETECTION     "/dev/zf_gpio_hall_detection"
 
 // GPIO按键设备节点
-#define ZF_GPIO_KEY_0              "/dev/zf_gpio_key_0"
 #define ZF_GPIO_KEY_1              "/dev/zf_gpio_key_1"
 #define ZF_GPIO_KEY_2              "/dev/zf_gpio_key_2"
 #define ZF_GPIO_KEY_3              "/dev/zf_gpio_key_3"
+#define ZF_GPIO_KEY_4              "/dev/zf_gpio_key_4"
 
 // GPIO电机设备节点
 #define ZF_GPIO_MOTOR_1            "/dev/zf_gpio_motor_1"

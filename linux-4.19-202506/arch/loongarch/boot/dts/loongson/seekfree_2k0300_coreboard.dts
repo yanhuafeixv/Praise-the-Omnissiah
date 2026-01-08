@@ -17,25 +17,25 @@
     // ----------蜂鸣器---------- //
 
     // ----------按键---------- //
-    zf_gpio_key_0{
+    zf_gpio_key_1{
         status = "okay";
         compatible = "seekfree,gpio_in";
         gpios = <&gpa5 0 GPIO_ACTIVE_HIGH>;
 	};
 
-    zf_gpio_key_1{
+    zf_gpio_key_2{
         status = "okay";
         compatible = "seekfree,gpio_in";
         gpios = <&gpa4 15 GPIO_ACTIVE_HIGH>;
 	};
 
-    zf_gpio_key_2{
+    zf_gpio_key_3{
         status = "okay";
         compatible = "seekfree,gpio_in";
         gpios = <&gpa4 14 GPIO_ACTIVE_HIGH>;
 	};
 
-    zf_gpio_key_3{
+    zf_gpio_key_4{
         status = "okay";
         compatible = "seekfree,gpio_in";
         gpios = <&gpa4 13 GPIO_ACTIVE_HIGH>;
@@ -202,19 +202,15 @@
 
 // ----------姿态传感器---------- //
 &spi1 {
-
     status = "okay";
     pinctrl-names = "default";
     pinctrl-0 = <&spi1_4bit>;
-
     imu: imu@0 {
         status = "okay";
-        gpio-controller;
         compatible = "seekfree,imu";    // 自动识别IMU660RA IMU660RB IMU963RA
         spi-max-frequency = <10000000>;
         reg = <0>;
     };
-
 };
 
 
@@ -250,6 +246,9 @@
 // ----------IPS200屏幕---------- //
 
 // ----------正交编码器配置---------- //
+// 正交编码器和方向编码器只能二选一使用，不能同时使用
+// 正交编码器和方向编码器只能二选一使用，不能同时使用
+// 正交编码器和方向编码器只能二选一使用，不能同时使用
 &encoder_atim{
     status = "okay";
     compatible = "seekfree,encoder_quad";
@@ -266,6 +265,29 @@
     dev-name = "zf_encoder_quad_2";
 };
 // ----------正交编码器配置---------- //
+
+// ----------方向编码器配置---------- //
+// 正交编码器和方向编码器只能二选一使用，不能同时使用
+// 正交编码器和方向编码器只能二选一使用，不能同时使用
+// 正交编码器和方向编码器只能二选一使用，不能同时使用
+// &encoder_atim{
+//     status = "okay";
+//     compatible = "seekfree,encoder_dir";
+//     pinctrl-names = "default";
+//     pinctrl-0 = <&atim_ch1_pin_m0>;   
+//     dir-gpios = <&gpa1 13 GPIO_ACTIVE_LOW>;
+//     dev-name = "zf_encoder_dir_1";
+// };
+
+// &encoder_gtim{
+//     status = "okay";
+//     compatible = "seekfree,encoder_dir";
+//     pinctrl-names = "default";
+//     pinctrl-0 = <&gtim_ch1_pin_m0>;
+//     dir-gpios = <&gpa2 3 GPIO_ACTIVE_LOW>;
+//     dev-name = "zf_encoder_dir_2";
+// };
+// ----------方向编码器配置---------- //
 
 // ----------电机PWM配置---------- //
 // 电机信号1
