@@ -173,7 +173,7 @@ vi SEEKFREE_APP
 
 随便输入个内容，我这里输入125
 
-![image-20250306141827580](./resource_old/image-20250306141827580.png)
+![image-20250306141827580](./resource/image-20250306141827580.png)
 
 然后保存退出。
 
