@@ -29,6 +29,7 @@
 * 修改记录
 * 日期              作者           备注
 * 2025-12-27        大W            first version
+* 2026-01-14        补充           添加自动曝光相关接口
 ********************************************************************************************************************/
 
 #include "zf_device_uvc.hpp"
@@ -117,10 +118,10 @@ uint8_t* zf_device_uvc::get_gray_image_ptr()
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-// 函数简介 获取彩色图像数据指针
+// 函数简介 获取RGB彩色图像数据指针
 // 参数说明 无
-// 返回参数 uint8_t* RGB彩色图像首地址指针，NULL-未获取到有效图像
-// 使用示例 uint8_t *p_img = uvc_obj.get_rgb_image_ptr();
+// 返回参数 uint16_t* RGB彩色图像首地址指针，NULL-未获取到有效图像
+// 使用示例 uint16_t *p_img = uvc_obj.get_rgb_image_ptr();
 // 备注信息 内部完成BGR转BGR565，指针指向彩色图首地址，数据格式为uint16三通道连续存储
 //-------------------------------------------------------------------------------------------------------------------
 uint16_t* zf_device_uvc::get_rgb_image_ptr()
@@ -141,6 +142,138 @@ uint16_t* zf_device_uvc::get_rgb_image_ptr()
 bool zf_device_uvc::is_camera_opened() const
 {
     return is_opened;
+}
+
+//-------------------------------------------------------------------------------------------------------------------
+// 函数简介 设置自动曝光模式（新增实现）
+// 参数说明 auto_exposure_mode 自动曝光模式（推荐使用宏：UVC_AUTO_EXPOSURE_ENABLE/UVC_AUTO_EXPOSURE_DISABLE）
+// 返回参数 int8 0-设置成功  -1-设置失败/摄像头未打开
+// 使用示例 int8 res = uvc_obj.set_auto_exposure(UVC_AUTO_EXPOSURE_DISABLE);
+// 备注信息 适配LS2K0300平台，3=开启自动曝光，1=关闭自动曝光（手动模式）
+//-------------------------------------------------------------------------------------------------------------------
+int8 zf_device_uvc::set_auto_exposure(int32_t auto_exposure_mode)
+{
+    // 检查摄像头是否已打开
+    if(!is_opened || !cap.isOpened())
+    {
+        std::cerr << "camera not opened, can not set auto exposure!" << std::endl;
+        return -1;
+    }
+
+    try
+    {
+        // 设置自动曝光模式
+        bool set_result = cap.set(cv::CAP_PROP_AUTO_EXPOSURE, static_cast<double>(auto_exposure_mode));
+        if(!set_result)
+        {
+            std::cerr << "set auto exposure mode failed!" << std::endl;
+            return -1;
+        }
+    }
+    catch(const cv::Exception& e)
+    {
+        std::cerr << "OpenCV 异常: " << e.what() << std::endl;
+        return -1;
+    }
+
+    return 0;
+}
+
+//-------------------------------------------------------------------------------------------------------------------
+// 函数简介 设置手动曝光值（新增实现）
+// 参数说明 exposure_value 曝光值（范围：0-1000，具体以摄像头支持为准，默认使用UVC_DEFAULT_EXPOSURE）
+// 返回参数 int8 0-设置成功  -1-设置失败/摄像头未打开/处于自动曝光模式
+// 使用示例 int8 res = uvc_obj.set_exposure_value(UVC_DEFAULT_EXPOSURE);
+// 备注信息 仅在手动曝光模式下生效，自动曝光模式下此设置无效
+//-------------------------------------------------------------------------------------------------------------------
+int8 zf_device_uvc::set_exposure_value(int32_t exposure_value)
+{
+    // 检查摄像头是否已打开
+    if(!is_opened || !cap.isOpened())
+    {
+        std::cerr << "camera not opened, can not set exposure value!" << std::endl;
+        return -1;
+    }
+
+    // 检查当前是否为手动曝光模式（可选：增加校验，提高鲁棒性）
+    double current_auto_mode = get_auto_exposure_mode();
+    if(current_auto_mode == UVC_AUTO_EXPOSURE_ENABLE)
+    {
+        std::cerr << "current is auto exposure mode, can not set fixed exposure value!" << std::endl;
+        return -1;
+    }
+
+    try
+    {
+        // 设置手动曝光值
+        bool set_result = cap.set(cv::CAP_PROP_EXPOSURE, static_cast<double>(exposure_value));
+        if(!set_result)
+        {
+            std::cerr << "set exposure value failed!" << std::endl;
+            return -1;
+        }
+    }
+    catch(const cv::Exception& e)
+    {
+        std::cerr << "OpenCV 异常: " << e.what() << std::endl;
+        return -1;
+    }
+
+    return 0;
+}
+
+//-------------------------------------------------------------------------------------------------------------------
+// 函数简介 获取当前自动曝光模式（新增实现）
+// 参数说明 无
+// 返回参数 double 当前自动曝光模式值（-1.0=获取失败/摄像头未打开）
+// 使用示例 double mode = uvc_obj.get_auto_exposure_mode();
+// 备注信息 用于验证自动曝光模式是否设置成功
+//-------------------------------------------------------------------------------------------------------------------
+double zf_device_uvc::get_auto_exposure_mode()
+{
+    // 检查摄像头是否已打开
+    if(!is_opened || !cap.isOpened())
+    {
+        std::cerr << "camera not opened, can not get auto exposure mode!" << std::endl;
+        return -1.0;
+    }
+
+    try
+    {
+        return cap.get(cv::CAP_PROP_AUTO_EXPOSURE);
+    }
+    catch(const cv::Exception& e)
+    {
+        std::cerr << "OpenCV 异常: " << e.what() << std::endl;
+        return -1.0;
+    }
+}
+
+//-------------------------------------------------------------------------------------------------------------------
+// 函数简介 获取当前曝光值（新增实现）
+// 参数说明 无
+// 返回参数 double 当前曝光值（-1.0=获取失败/摄像头未打开）
+// 使用示例 double value = uvc_obj.get_current_exposure();
+// 备注信息 手动模式下返回设置的曝光值，自动模式下返回摄像头自动调节的值
+//-------------------------------------------------------------------------------------------------------------------
+double zf_device_uvc::get_current_exposure()
+{
+    // 检查摄像头是否已打开
+    if(!is_opened || !cap.isOpened())
+    {
+        std::cerr << "camera not opened, can not get current exposure value!" << std::endl;
+        return -1.0;
+    }
+
+    try
+    {
+        return cap.get(cv::CAP_PROP_EXPOSURE);
+    }
+    catch(const cv::Exception& e)
+    {
+        std::cerr << "OpenCV 异常: " << e.what() << std::endl;
+        return -1.0;
+    }
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -170,9 +303,13 @@ int8 zf_device_uvc::init(const char *path)
     cap.set(cv::CAP_PROP_FRAME_HEIGHT, UVC_HEIGHT);
     cap.set(cv::CAP_PROP_FPS, UVC_FPS);
 
+    // 初始化时默认开启自动曝光（新增：保持摄像头默认行为，也可根据需求修改）
+    set_auto_exposure(UVC_AUTO_EXPOSURE_ENABLE);
+
     std::cout << "get uvc width = "  << cap.get(cv::CAP_PROP_FRAME_WIDTH)  << std::endl;
     std::cout << "get uvc height = " << cap.get(cv::CAP_PROP_FRAME_HEIGHT) << std::endl;
     std::cout << "get uvc fps = "    << cap.get(cv::CAP_PROP_FPS)         << std::endl;
+    std::cout << "get uvc auto exposure mode = " << get_auto_exposure_mode() << std::endl;
 
     is_opened = true;
     return 0;

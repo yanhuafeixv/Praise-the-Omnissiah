@@ -2,8 +2,8 @@
 
 
 
-# drivers/seekree_libraries/zf_device/zf_device_config.o:
-# 	cp drivers/seekree_libraries/zf_device/zf_device_config.elf drivers/seekree_libraries/zf_device/zf_device_config.o
+drivers/seekree_libraries/zf_device/zf_device_config.o:
+	cp drivers/seekree_libraries/zf_device/zf_device_config.elf drivers/seekree_libraries/zf_device/zf_device_config.o
 
 obj-$(CONFIG_ZF_DEVICE_IMU) += zf_device_imu.o
 zf_device_imu-objs := zf_device/zf_device_imu.o zf_device/zf_device_imu_core.o zf_device/zf_device_imu660ra.o zf_device/zf_device_imu660rb.o zf_device/zf_device_imu963ra.o zf_device/zf_device_config.o 
