@@ -54,7 +54,7 @@
 // key_1 = x.
 // key_2 = x.
 // key_3 = x.
-/
+//
 // 3.按下按键即可看到不同的输出状态
 //
 // **************************** 代码区域 ****************************
@@ -64,10 +64,10 @@
 #define KEY_3_PATH        ZF_GPIO_KEY_3
 #define KEY_4_PATH        ZF_GPIO_KEY_4
 
-zf_driver_gpio  key_0(KEY_1_PATH, O_RDWR);
-zf_driver_gpio  key_1(KEY_2_PATH, O_RDWR);
-zf_driver_gpio  key_2(KEY_3_PATH, O_RDWR);
-zf_driver_gpio  key_3(KEY_4_PATH, O_RDWR);
+zf_driver_gpio  key_1(KEY_1_PATH, O_RDWR);
+zf_driver_gpio  key_2(KEY_2_PATH, O_RDWR);
+zf_driver_gpio  key_3(KEY_3_PATH, O_RDWR);
+zf_driver_gpio  key_4(KEY_4_PATH, O_RDWR);
 
 int main(int, char**) 
 {

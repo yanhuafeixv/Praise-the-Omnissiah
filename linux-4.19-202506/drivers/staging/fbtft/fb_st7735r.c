@@ -69,6 +69,31 @@ static const s16 default_init_sequence[] = {
 	/* VMCTR1 - Power Control */
 	-1, 0xC5, 0x0E,
 
+
+	// 对应 E0 寄存器（伽马校正1）
+    -1, 0xE0, 0x0F, 0x1A, 0x0F, 0x18, 0x2F, 0x28, 0x20, 0x22, 
+        0x1F, 0x1B, 0x23, 0x37, 0x00, 0x07, 0x02, 0x10,
+    
+    // 对应 E1 寄存器（伽马校正2）
+    -1, 0xE1, 0x0F, 0x1B, 0x0F, 0x17, 0x33, 0x2C, 0x29, 0x2E, 
+        0x30, 0x30, 0x39, 0x3F, 0x00, 0x07, 0x03, 0x10,
+    
+    // 对应 2A 寄存器（列地址设置）
+    -1, 0x2A, 0x00, 0x00+2, 0x00, 0x80+2,
+    
+    // 对应 2B 寄存器（行地址设置）
+    -1, 0x2B, 0x00, 0x00+3, 0x00, 0x80+3,
+    
+    // 对应 F0 寄存器配置
+    -1, 0xF0, 0x01,
+    
+    // 对应 F6 寄存器配置
+    -1, 0xF6, 0x00,
+    
+    // 对应 3A 寄存器（像素格式设置）
+    -1, 0x3A, 0x05,
+	
+
 	-1, MIPI_DCS_EXIT_INVERT_MODE,
 
 	-1, MIPI_DCS_SET_PIXEL_FORMAT, MIPI_DCS_PIXEL_FMT_16BIT,
@@ -85,6 +110,10 @@ static const s16 default_init_sequence[] = {
 
 static void set_addr_win(struct fbtft_par *par, int xs, int ys, int xe, int ye)
 {
+	xs += 2;
+	xe += 2;
+	ys += 1;
+	ye += 1;
 	write_reg(par, MIPI_DCS_SET_COLUMN_ADDRESS,
 		  xs >> 8, xs & 0xFF, xe >> 8, xe & 0xFF);
 

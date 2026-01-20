@@ -44,12 +44,12 @@
 // 
 //  目前仅支持两寸SPI屏幕
 //  SPI 两寸屏 硬件引脚
-//  SCL         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO82
-//  SDA         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO84
-//  RST         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO81
-//  DC          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO71
-//  CS          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO85
-//  BL          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO75
+//  SCL         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO82
+//  SDA         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO84
+//  RST         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO81
+//  DC          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO71
+//  CS          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO85
+//  BL          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO75
 //  GND         核心板电源地 GND
 //  3V3         核心板 3V3 电源
 // 
@@ -74,15 +74,22 @@ int main(int, char**)
 {
 
     ips200.init(FB_PATH);
+    uint16_t data[128];
+    int16_t data_index = 0;
+    for( ; 64 > data_index; data_index ++)
+        data[data_index] = data_index;
+    for(data_index = 64; 128 > data_index; data_index ++)
+        data[data_index] = 128 - data_index;
 
     while(1)
     {
-        // 此处编写需要循环执行的代码
-        ips200.clear();
-
+              ips200.clear();
+        ips200.show_rgb565_image(0, 120, (const uint16 *)gImage_seekfree_logo, 240, 80, 240, 80, 0);    // 显示一个RGB565色彩图片 原图240*80 显示240*80 低位在前
+        system_delay_ms(1500);
 
         ips200.full(RGB565_GRAY);
         ips200.show_string( 0 , 16*7,   "SEEKFREE");                            // 显示字符串
+        // ips200.show_chinese(80, 16*7,   16, (const uint8 *)chinese_test, 4, RGB565_BLUE);               // 显示汉字
 
         // 显示的 flaot 数据 最多显示 8bit 位整数 最多显示 6bit 位小数
         ips200.show_float(  0 , 16*8,   -13.141592,     1, 6);                  // 显示 float 数据 1bit 整数 6bit 小数 应当显示 -3.141592 总共会有 9 个字符的显示占位
@@ -96,8 +103,17 @@ int main(int, char**)
 
         ips200.show_int(    0 , 16*11,  -2147483648,    8);                     // 显示 int32 数据 8bit 整数 应当显示 -47483648
         ips200.show_uint(   80, 16*11,  4294967295,     8);                     // 显示 uint32 数据 10bit 整数 应当显示 4294967295
+
         system_delay_ms(1000);
 
+        ips200.full(RGB565_GRAY);
+        ips200.show_wave(88, 144, data, 128, 64,  64, 32);                      // 显示一个三角波形 波形宽度 128 波形最大值 64 显示宽度 64 显示最大值 32
+        system_delay_ms(1000);
+        ips200.full(RGB565_GRAY);
+        ips200.show_wave(56, 128, data, 128, 64, 128, 64);                      // 显示一个三角波形 波形宽度 128 波形最大值 64 显示宽度 128 显示最大值 64
+        system_delay_ms(1000);
+
+        // 使用画线函数 从顶上两个角画射线
         ips200.clear();
         for(data_index = 0; 240 > data_index; data_index += 10)
         {

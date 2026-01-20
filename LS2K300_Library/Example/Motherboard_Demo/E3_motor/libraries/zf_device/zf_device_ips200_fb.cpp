@@ -39,7 +39,7 @@
 // 函数简介     无参构造函数
 // 参数说明     void
 // 返回参数     void
-// 使用示例     zf_device_ips200 lcd;
+// 使用示例     zf_device_ips200 ips200;
 // 备注信息     初始化默认画笔和背景颜色，显存地址置空
 //-------------------------------------------------------------------------------------------------------------------
 zf_device_ips200::zf_device_ips200(void)
@@ -155,6 +155,40 @@ void zf_device_ips200::draw_line (uint16 x_start, uint16 y_start, uint16 x_end, 
             draw_point(x_start, y_start, color);
         }
     }while(0);
+}
+
+//-------------------------------------------------------------------------------------------------------------------
+// 函数简介     IPS200 显示波形
+// 参数说明     x               坐标x方向的起点 参数范围 [0, width-1]
+// 参数说明     y               坐标y方向的起点 参数范围 [0, height-1]
+// 参数说明     *wave           波形数组指针
+// 参数说明     width           波形实际宽度
+// 参数说明     value_max       波形实际最大值
+// 参数说明     dis_width       波形显示宽度 参数范围 [0, width]
+// 参数说明     dis_value_max   波形显示最大值 参数范围 [0, height]
+// 返回参数     void
+// 使用示例     ips200.show_wave(0, 0, data, 128, 64, 64, 32);
+// 备注信息     
+//-------------------------------------------------------------------------------------------------------------------
+void zf_device_ips200::show_wave (uint16 x, uint16 y, const uint16 *wave, uint16 width, uint16 value_max, uint16 dis_width, uint16 dis_value_max)
+{
+    uint32 i = 0, j = 0;
+    uint32 width_index = 0, value_max_index = 0;
+
+    for(j = 0; j < dis_value_max; j ++)
+    {
+        for(i = 0; i < dis_width; i ++)
+        {
+            draw_point(i, y + j, bg_color);
+        }
+    }
+
+    for(i = 0; i < dis_width; i ++)
+    {
+        width_index = i * width / dis_width;
+        value_max_index = *(wave + width_index) * (dis_value_max - 1) / value_max;
+        draw_point(i + x, (dis_value_max - 1) - value_max_index + y, pen_color);
+    }
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -311,17 +345,23 @@ void zf_device_ips200::show_float (uint16 x, uint16 y, const double dat, uint8 n
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-// 函数简介     显示灰度图像
-// 参数说明     x               坐标x方向的起点 [0, width-1]
-// 参数说明     y               坐标y方向的起点 [0, height-1]
-// 参数说明     image           灰度图像数据首地址 数据类型 const uint8*
-// 参数说明     width           图像宽度 像素
-// 参数说明     height          图像高度 像素
+// 函数简介     IPS200 显示 8bit 灰度图像 带二值化阈值
+// 参数说明     x               坐标x方向的起点 参数范围 [0, ips200_x_max-1]
+// 参数说明     y               坐标y方向的起点 参数范围 [0, ips200_y_max-1]
+// 参数说明     *image          图像数组指针
+// 参数说明     width           图像实际宽度
+// 参数说明     height          图像实际高度
+// 参数说明     dis_width       图像显示宽度 参数范围 [0, ips200_x_max]
+// 参数说明     dis_height      图像显示高度 参数范围 [0, ips200_y_max]
+// 参数说明     threshold       二值化显示阈值 0-不开启二值化
 // 返回参数     void
-// 使用示例     ips200.show_gray_image(0,0,gray_buf,100,80);
-// 备注信息     灰度值自动转换为RGB565格式显示，灰度值范围0~255
+// 使用示例     show_gray_image(0, 0, mt9v03x_image[0], MT9V03X_W, MT9V03X_H, MT9V03X_W, MT9V03X_H, 0);
+// 备注信息     用于显示总钻风的图像
+//              如果要显示二值化图像 直接修改最后一个参数为需要的二值化阈值即可
+//              如果要显示二值化图像 直接修改最后一个参数为需要的二值化阈值即可
+//              如果要显示二值化图像 直接修改最后一个参数为需要的二值化阈值即可
 //-------------------------------------------------------------------------------------------------------------------
-void zf_device_ips200::show_gray_image(uint16 x, uint16 y, const uint8 *image, uint16 width, uint16 height)
+void zf_device_ips200::show_gray_image (uint16 x, uint16 y, const uint8 *image, uint16 width, uint16 height, uint16 dis_width, uint16 dis_height, uint8 threshold)
 {
     uint32 x_start = 0, y_start = 0;
     uint16 color = 0;
@@ -330,38 +370,57 @@ void zf_device_ips200::show_gray_image(uint16 x, uint16 y, const uint8 *image, u
     {
         for(x_start = x; x_start < (x + width); x_start++)
         {
-            uint8 grayValue = image[(x_start - x) + (y_start- y) * width];
-
-            uint16 r = (grayValue >> 3) & 0b11111;
-            uint16 g = (grayValue >> 2) & 0b111111;
-            uint16 b = (grayValue >> 3) & 0b11111;
-            color = (r << 11) | (g << 5) | (b << 0);
-
-            draw_point(x_start, y_start,  color);
+            uint8 gray_value = image[(x_start - x) + (y_start- y) * width];
+            if(threshold == 0)
+            {
+                uint16 r = (gray_value >> 3) & 0b11111;
+                uint16 g = (gray_value >> 2) & 0b111111;
+                uint16 b = (gray_value >> 3) & 0b11111;
+                color = (r << 11) | (g << 5) | (b << 0);
+            }
+            else if(gray_value < threshold)
+            {
+                color = (RGB565_BLACK);
+            }
+            else
+            {
+                color = (RGB565_WHITE);
+            }
+            draw_point(x_start, y_start, color);
         }
     }
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-// 函数简介     显示RGB565格式图像
-// 参数说明     x               坐标x方向的起点 [0, width-1]
-// 参数说明     y               坐标y方向的起点 [0, height-1]
-// 参数说明     image           RGB565图像数据首地址 数据类型 const uint16*
-// 参数说明     width           图像宽度 像素
-// 参数说明     height          图像高度 像素
+// 函数简介     IPS200 显示 RGB565 彩色图像
+// 参数说明     x               坐标x方向的起点 参数范围 [0, ips200_x_max-1]
+// 参数说明     y               坐标y方向的起点 参数范围 [0, ips200_y_max-1]
+// 参数说明     *image          图像数组指针
+// 参数说明     width           图像实际宽度
+// 参数说明     height          图像实际高度
+// 参数说明     dis_width       图像显示宽度 参数范围 [0, ips200_x_max]
+// 参数说明     dis_height      图像显示高度 参数范围 [0, ips200_y_max]
+// 参数说明     color_mode      色彩模式 0-低位在前 1-高位在前
 // 返回参数     void
-// 使用示例     ips200.show_rgb_image(0,0,rgb_buf,100,80);
-// 备注信息     直接写入RGB565格式数据到显存，无格式转换，速度更快
+// 使用示例     show_rgb565_image(0, 0, scc8660_image[0], SCC8660_W, SCC8660_H, SCC8660_W, SCC8660_H, 1);
+// 备注信息     用于显示凌瞳的 RGB565 的图像
+//              如果要显示低位在前的其他 RGB565 图像 修改最后一个参数即可
+//              如果要显示低位在前的其他 RGB565 图像 修改最后一个参数即可
+//              如果要显示低位在前的其他 RGB565 图像 修改最后一个参数即可
 //-------------------------------------------------------------------------------------------------------------------
-void zf_device_ips200::show_rgb_image(uint16 x, uint16 y, const uint16 *image, uint16 width, uint16 height)
+void zf_device_ips200::show_rgb565_image (uint16 x, uint16 y, const uint16 *image, uint16 width, uint16 height, uint16 dis_width, uint16 dis_height, uint8 color_mode)
 {
     uint32 x_start = 0, y_start = 0;
     for(y_start = y; y_start < (y + height); y_start++)
     {
         for(x_start = x; x_start < (x + width); x_start++)
         {
-            uint16 rgbValue = image[(x_start - x) + (y_start- y) * width];
-            draw_point(x_start, y_start,  rgbValue);
+            uint16 color = image[(x_start - x) + (y_start- y) * width];
+            if(1 == color_mode)
+            {
+                color = ((color & 0x00FF) << 8) | ((color & 0xFF00) >> 8);
+            }
+            draw_point(x_start, y_start, color);
         }
     }
 }
@@ -373,7 +432,6 @@ void zf_device_ips200::show_rgb_image(uint16 x, uint16 y, const uint16 *image, u
 // 使用示例     ips200.init("/dev/fb0");
 // 备注信息     打开fb设备、获取屏幕参数、映射显存、初始化清屏，程序初始化阶段只调用一次
 //-------------------------------------------------------------------------------------------------------------------
-
 void zf_device_ips200::init(const char *path, uint8 is_reload_driver)
 {
     struct fb_fix_screeninfo fb_fix;

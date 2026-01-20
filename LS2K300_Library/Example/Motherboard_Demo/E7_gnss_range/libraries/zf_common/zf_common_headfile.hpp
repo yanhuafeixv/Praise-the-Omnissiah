@@ -59,6 +59,7 @@
 //===================================================外接设备驱动层===================================================
 #include "zf_device_imu.hpp"
 #include "zf_device_ips200_fb.hpp"
+#include "zf_device_tft180_fb.hpp"
 #include "zf_device_uvc.hpp"
 #include "zf_device_dl1x.hpp"
 

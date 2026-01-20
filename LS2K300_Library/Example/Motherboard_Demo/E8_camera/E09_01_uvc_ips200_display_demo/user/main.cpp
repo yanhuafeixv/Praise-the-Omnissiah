@@ -43,12 +43,12 @@
 // 
 //  目前仅支持两寸SPI屏幕
 //  SPI 两寸屏 硬件引脚
-//  SCL         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO82
-//  SDA         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO84
-//  RST         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO81
-//  DC          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO71
-//  CS          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO85
-//  BL          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v 节点定义 默认 GPIO75
+//  SCL         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO82
+//  SDA         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO84
+//  RST         查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO81
+//  DC          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO71
+//  CS          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO85
+//  BL          查看 seekfree_2k0300_coreboard.dts 文件中 st7789v_or_st7735r 节点定义 默认 GPIO75
 //  GND         核心板电源地 GND
 //  3V3         核心板 3V3 电源
 // 
@@ -116,7 +116,7 @@ int main()
                 {
                     // 在屏幕的(0,0)坐标起点，显示RGB图像
                     // 显示尺寸为摄像头采集的标准宽高 UVC_WIDTH * UVC_HEIGHT
-                    ips200.show_rgb_image(0, 0, rgb_image, UVC_WIDTH, UVC_HEIGHT);
+                    ips200.displayimage_rgb565(rgb_image, UVC_WIDTH, UVC_HEIGHT);
                 }
                 continue; // 跳过后续灰度显示逻辑，直接进入下一次循环
             }
@@ -131,7 +131,7 @@ int main()
                 {
                     // 在屏幕的(0,0)坐标起点，显示灰度图像
                     // 显示尺寸为摄像头采集的标准宽高 UVC_WIDTH * UVC_HEIGHT
-                    ips200.show_gray_image(0, 0, gray_image, UVC_WIDTH, UVC_HEIGHT);
+                    ips200.displayimage_gray(gray_image, UVC_WIDTH, UVC_HEIGHT);
                 }
             }
         }
