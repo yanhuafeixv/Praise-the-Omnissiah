@@ -40,7 +40,7 @@
 
 // DL1X IIO框架 所有路径宏定义
 #define DL1X_EVENT_PATH         "/sys/bus/iio/devices/iio:device2/events/in_voltage_change_en"
-#define DL1X_DISTANCE_PATH      "/sys/bus/iio/devices/iio:device2/events/in_distance_raw"
+#define DL1X_DISTANCE_PATH      "/sys/bus/iio/devices/iio:device2/in_distance_raw"
 
 // DL1X设备类型枚举 【核心修改：枚举名改为 dl1x_device_type_enum】
 enum dl1x_device_type_enum {
