@@ -29,9 +29,12 @@
 * 修改记录
 * 日期              作者           备注
 * 2025-12-27        大W            first version
+* 2026-02-09        补充           实现发送失败重发剩余字节逻辑
 ********************************************************************************************************************/
 
 #include "zf_driver_tcp_client.hpp"
+#include <unistd.h>   // 用于usleep实现延时
+#include <errno.h>    // 用于错误码判断
 
 //-------------------------------------------------------------------------------------------------------------------
 // 函数简介 设置文件句柄为非阻塞模式
@@ -52,13 +55,15 @@ int zf_driver_tcp_client::set_nonblocking(int fd)
 // 参数说明 无
 // 返回参数 无
 // 使用示例 zf_driver_tcp_client tcp_client;
-// 备注信息 初始化套接字句柄为无效值，地址结构体内存清零初始化
+// 备注信息 初始化套接字句柄为无效值，地址结构体内存清零初始化；初始化重发参数
 //-------------------------------------------------------------------------------------------------------------------
 zf_driver_tcp_client::zf_driver_tcp_client()
 {
     // 初始化socket句柄为无效值，地址结构体清零
     m_socket = -1;
     memset(&m_server_addr, 0, sizeof(m_server_addr));
+    // 初始化重发参数（默认值）
+    this->set_retry_param(100, 10); // 默认最大重发次数100次，重发间隔10ms
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -75,6 +80,20 @@ zf_driver_tcp_client::~zf_driver_tcp_client()
         close(m_socket);
         m_socket = -1;
     }
+}
+
+//-------------------------------------------------------------------------------------------------------------------
+// 函数简介 设置重发参数（新增）
+// 参数说明 max_retry        最大重发次数
+// 参数说明 retry_interval  重发间隔（毫秒）
+// 返回参数 无
+// 使用示例 tcp_client.set_retry_param(5, 200);
+// 备注信息 灵活调整重发策略
+//-------------------------------------------------------------------------------------------------------------------
+void zf_driver_tcp_client::set_retry_param(uint8 max_retry, uint16 retry_interval)
+{
+    m_max_retry = max_retry;
+    m_retry_interval = retry_interval;
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -125,24 +144,69 @@ int8 zf_driver_tcp_client::init(const char *ip_addr, uint32 port)
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-// 函数简介 TCP发送数据
+// 函数简介 TCP发送数据（支持剩余字节重发）
 // 参数说明 buff    待发送数据缓冲区指针
 // 参数说明 length  待发送数据的字节长度
 // 返回参数 uint32  成功返回实际发送字节数  失败返回0
 // 使用示例 tcp_client.send_data(send_buf, sizeof(send_buf));
-// 备注信息 
+// 备注信息 非阻塞发送，失败时重发剩余未发送字节，直到全部发送或达到最大重试次数
 //-------------------------------------------------------------------------------------------------------------------
 uint32 zf_driver_tcp_client::send_data(const uint8 *buff, uint32 length)
 {
-    int32 str_len;
-    str_len = send(m_socket, buff, length, 0);
-    
-    if (str_len == -1)
+    // 前置校验：参数无效/套接字未初始化，直接返回0
+    if (buff == nullptr || length == 0 || m_socket < 0)
     {
-        printf("send() error");
-        return 0; 
+        printf("send_data: invalid param or socket not init\r\n");
+        return 0;
     }
-    return str_len;
+
+    uint32 total_sent = 0;    // 已发送总字节数
+    uint8 retry_count = 0;    // 当前重发次数
+
+    // 循环发送，直到所有字节发送完成 或 达到最大重发次数
+    while (total_sent < length && retry_count <= m_max_retry)
+    {
+        int32 send_len = send(m_socket, buff + total_sent, length - total_sent, 0);
+        
+        if (send_len > 0)
+        {
+            // 本次发送成功，更新已发送字节数，重置重发次数
+            total_sent += send_len;
+            retry_count = 0; // 成功发送后重置重发计数
+        }
+        else if (send_len == -1)
+        {
+            // 发送失败，判断失败类型
+            if (errno == EAGAIN || errno == EWOULDBLOCK)
+            {
+                // 非阻塞模式：发送缓冲区满，暂时无法发送，延时后重发
+                printf("send_data: buffer full, retry(%d/%d), remain %d bytes\r\n", 
+                       retry_count + 1, m_max_retry, length - total_sent);
+                // usleep(m_retry_interval * 1000); // 毫秒转微秒
+                retry_count++;
+            }
+            else
+            {
+                // 永久错误（如连接断开、套接字错误），直接返回失败
+                perror("send_data error");
+                return 0;
+            }
+        }
+        else // send_len == 0：连接关闭
+        {
+            printf("send_data: connection closed by server\r\n");
+            return 0;
+        }
+    }
+
+    // 检查是否全部发送完成
+    if (total_sent < length)
+    {
+        printf("send_data: max retry reached, sent %d/%d bytes\r\n", total_sent, length);
+        return 0; // 未全部发送，返回失败
+    }
+
+    return total_sent; // 全部发送成功，返回总发送字节数
 }
 
 //-------------------------------------------------------------------------------------------------------------------
