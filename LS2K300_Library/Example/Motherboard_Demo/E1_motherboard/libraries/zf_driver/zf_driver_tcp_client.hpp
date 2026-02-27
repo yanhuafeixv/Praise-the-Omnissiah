@@ -43,8 +43,8 @@ private:
     int                 m_socket;        // TCP套接字句柄
     struct sockaddr_in  m_server_addr;   // 服务器地址结构体
     int set_nonblocking(int fd);         // 设置非阻塞模式私有方法
-    uint32               m_max_retry;     // 最大重发次数（默认10次）
-    uint16              m_retry_interval;// 重发间隔（毫秒，默认100ms）
+    uint32              m_max_retry;     // 最大重发次数（默认100次）
+    uint16              m_retry_interval;// 重发间隔（毫秒，默认10ms）
 
     zf_driver_tcp_client(const zf_driver_tcp_client&) = delete;
     zf_driver_tcp_client& operator=(const zf_driver_tcp_client&) = delete;
