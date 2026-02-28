@@ -28,7 +28,3 @@ alias la='ls -la'
 alias lh='ls -lh'
 export HOME=/home/root
 
-
-if [ "$USER" = "root" ]; then
-    cd /home/root || cd /
-fi
