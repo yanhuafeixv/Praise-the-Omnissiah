@@ -1,7 +1,6 @@
 通过网盘分享的文件：龙芯环境搭建软件
 里面有:
-ubuntu镜像：ubuntu-24.04.2-desktop-amd64
-终端软件：MobaXterm_Portable_v25.1
-虚拟机：VMware-workstation-full-17.0.2-21581411
+配置好的ubuntu24.05：ubuntu-24.04.2-desktop-amd64
+虚拟机软件：VMware-workstation-full-17.6.4-24832109.exe
 
-链接: https://pan.baidu.com/s/1GUz4VZZBqmnnQcF4jpTl2Q?pwd=cu9e 提取码: cu9e
+链接: https://pan.baidu.com/s/1GV5yAunolRxF5mYfm8z03w?pwd=kwtx 提取码: kwtx
