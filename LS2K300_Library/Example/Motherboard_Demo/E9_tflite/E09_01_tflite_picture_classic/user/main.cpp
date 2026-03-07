@@ -211,7 +211,7 @@ int main(int, char**)
     }
     
     // 输出最终结果（和摄像头例程格式完全一致）
-    printf("\n✅ [静态图片推理] 预测类别：%s | 置信度：%.4f | 推理耗时：%lld us\n",
+    printf("\n✅ [静态图片推理] 预测类别：%s | 置信度：%.4f | 推理耗时：%ld us\n",
            class_labels[max_i], max_v, duration);   
     printf("=========================\n");
 

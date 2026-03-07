@@ -216,7 +216,7 @@ int main(int, char**)
         if(frame_count % LOG_PRINT_FREQUENCY == 0)
         {
             // 打印简洁的推理结果（每N帧一次）
-            printf("[第%d帧] 预测类别：%s | 置信度：%.4f | 推理耗时：%lld us\n",
+            printf("[第%d帧] 预测类别：%s | 置信度：%.4f | 推理耗时：%ld us\n",
                    frame_count, class_labels[max_i], max_v, time_cnt);
             
             // 可选：打印所有类别的置信度（调试用，按需开启）
