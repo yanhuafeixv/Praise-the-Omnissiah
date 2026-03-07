@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.5.0)
 
 # 基础路径与项目名称配置
 set(CURRENT_DIR ${CMAKE_CURRENT_LIST_DIR})
-get_filename_component(PARENT_PARENT_DIR ${CURRENT_DIR}/../.. ABSOLUTE)
-get_filename_component(PROJ_NAME ${PARENT_PARENT_DIR} NAME)
+get_filename_component(PARENT_DIR ${CURRENT_DIR}/.. ABSOLUTE)  
+get_filename_component(PROJ_NAME ${PARENT_DIR} NAME)           # 取上级目录名作为项目名
 project(${PROJ_NAME} VERSION 0.1.0 LANGUAGES C CXX)
 
 # 编译参数（龙芯LoongArch适配）
