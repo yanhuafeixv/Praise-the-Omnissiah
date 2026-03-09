@@ -46,8 +46,7 @@
 #define UVC_FPS       180
 #define UVC_PATH     "/dev/video0"
 
-#define UVC_AUTO_EXPOSURE_ENABLE   3    // 开启自动曝光（适配LS2K0300平台/对应摄像头）
-#define UVC_AUTO_EXPOSURE_DISABLE  1    // 关闭自动曝光（切换为手动曝光模式）
+#define UVC_AUTO_EXPOSURE_ENABLE   3    // 开启自动曝光（适配LS2K0300平台/对应摄像头）(3为自动曝光模式，1为手动曝光模式)
 #define UVC_DEFAULT_EXPOSURE       300  // 默认曝光值，范围一般在0-2500之间，具体看摄像头支持
 
 class zf_device_uvc
@@ -59,7 +58,6 @@ private:
     cv::Mat           frame_rgb;  // RGB彩色图像缓存
     uint8_t*          gray_image; // 灰度图像数据指针
     uint16_t*         rgb_image;  // RGB彩色图像数据指针
-    bool              is_opened;  // 摄像头打开状态标志位
 
 public:
     //-------------------------------------------------------------------------------------------------------------------
@@ -117,16 +115,16 @@ public:
     bool is_camera_opened() const;
 
     //-------------------------------------------------------------------------------------------------------------------
-    // 函数简介 设置自动曝光模式（新增接口）
-    // 参数说明 auto_exposure_mode 自动曝光模式（推荐使用宏：UVC_AUTO_EXPOSURE_ENABLE/UVC_AUTO_EXPOSURE_DISABLE）
+    // 函数简介 设置自动曝光模式
+    // 参数说明 auto_exposure_mode 自动曝光模式
     // 返回参数 int8 0-设置成功  -1-设置失败/摄像头未打开
-    // 使用示例 int8 res = uvc_obj.set_auto_exposure(UVC_AUTO_EXPOSURE_DISABLE);
+    // 使用示例 int8 res = uvc_obj.set_auto_exposure(UVC_AUTO_EXPOSURE_ENABLE);
     // 备注信息 适配LS2K0300平台，3=开启自动曝光，1=关闭自动曝光（手动模式）
     //-------------------------------------------------------------------------------------------------------------------
-    int8 set_auto_exposure(int32_t auto_exposure_mode = UVC_AUTO_EXPOSURE_DISABLE);
+    int8 set_auto_exposure(int32_t auto_exposure_mode = UVC_AUTO_EXPOSURE_ENABLE);
 
     //-------------------------------------------------------------------------------------------------------------------
-    // 函数简介 设置手动曝光值（新增接口）
+    // 函数简介 设置手动曝光值
     // 参数说明 exposure_value 曝光值（范围：0-2500，具体以摄像头支持为准，默认使用UVC_DEFAULT_EXPOSURE）
     // 返回参数 int8 0-设置成功  -1-设置失败/摄像头未打开/处于自动曝光模式
     // 使用示例 int8 res = uvc_obj.set_exposure_value(UVC_DEFAULT_EXPOSURE);
