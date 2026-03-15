@@ -72,6 +72,8 @@ zf_driver_tcp_client tcp_client_dev;  // 定义TCP客户端设备对象，用于
 zf_device_uvc uvc_dev;                // 定义UVC免驱摄像头设备对象，用于摄像头初始化/图像采集
 uint8* rgay_image;                    // 灰度图像数据指针，指向摄像头采集到的灰度图像缓冲区首地址
 
+//hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+
 // ====================== TCP收发数据包装函数 ======================
 //-------------------------------------------------------------------------------------------------------------------
 // 函数简介 TCP发送数据 全局包装函数
