@@ -8,7 +8,6 @@
 #include <iostream> // for std::cerr
 #include <fstream>  // for std::ofstream
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <thread>
 #include <chrono>
 #include <atomic>

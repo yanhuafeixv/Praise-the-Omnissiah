@@ -3,6 +3,8 @@
 
 
 #include "zf_common_typedef.h"
+#include <opencv2/opencv.hpp>
+
 
 #define UVC_WIDTH   160
 #define UVC_HEIGHT  120
@@ -13,4 +15,8 @@ int8 wait_image_refresh();
 
 
 extern uint8_t *rgay_image;
+
+extern cv::Mat frame_rgb;      
+extern cv::Mat frame_rgay;     
+
 #endif
