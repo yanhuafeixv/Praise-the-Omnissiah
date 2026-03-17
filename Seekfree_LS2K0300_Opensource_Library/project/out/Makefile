@@ -609,6 +609,30 @@ home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driv
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 .PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o: home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o
+
+# target to build an object file
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
+
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i: home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i
+
+# target to preprocess a source file
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
+
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s: home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s
+
+# target to generate assembly for a file
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -702,6 +726,9 @@ help:
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o"
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i"
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s"
+	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o"
+	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i"
+	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
