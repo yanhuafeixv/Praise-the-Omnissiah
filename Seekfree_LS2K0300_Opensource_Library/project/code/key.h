@@ -1,12 +1,12 @@
 #ifndef _key_h_
 #define _key_h_
 
-#define KEY_0       "/dev/zf_driver_gpio_key_0"
-#define KEY_1       "/dev/zf_driver_gpio_key_1"
-#define KEY_2       "/dev/zf_driver_gpio_key_2"
-#define KEY_3       "/dev/zf_driver_gpio_key_3"
+#define KEY0       "/dev/zf_driver_gpio_key_0"
+#define KEY1       "/dev/zf_driver_gpio_key_1"
+#define KEY2       "/dev/zf_driver_gpio_key_2"
+#define KEY3       "/dev/zf_driver_gpio_key_3"
 
-#define KEY_LIST    { KEY_0, KEY_1, KEY_2, KEY_3 }
+#define KEY_LIST    { KEY0, KEY1, KEY2, KEY3 }
 
 #define KEY_RELEASE_LEVEL           ( 1         )                               // 按键的默认状态 也就是按键释放状态的电平
 #define KEY_MAX_SHOCK_PERIOD        ( 10        )                               // 按键消抖检测时长 单位毫秒 低于这个时长的信号会被认为是杂波抖动
@@ -14,10 +14,10 @@
 
 typedef enum
 {
-    KEY0,
-    KEY1,
-    KEY2,
-    KEY3,
+    KEY_0,
+    KEY_1,
+    KEY_2,
+    KEY_3,
     KEY_NUMBER,
 }key_index_enum;                                                                // 按键索引 对应上方定义的按键引脚个数 默认定义四个按键
 
