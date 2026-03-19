@@ -82,7 +82,7 @@ int main(int, char**)
         printf("switch_0 = %d\r\n", gpio_get_level(SWITCH_0));
         printf("switch_1 = %d\r\n", gpio_get_level(SWITCH_1));
 
-        system_delay_ms(100);
+        system_delay_ms(1000);
     }
 }
 
