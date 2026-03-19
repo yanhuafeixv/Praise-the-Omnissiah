@@ -161,6 +161,7 @@
 #include "../model/loong_cnn_model_simple.h"
 #include "motor.h"
 #include "key.h"
+#include "encoder.h"
 //===================================================用户自定义文件===================================================
 
 

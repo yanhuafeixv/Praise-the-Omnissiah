@@ -1,8 +1,8 @@
 #include "zf_common_headfile.h"
 
-static uint32               scanner_period = 1;                                 // 按键的扫描周期
-static uint32               key_press_time[KEY_NUMBER];                         // 按键信号持续时长
-static key_state_enum       key_state[KEY_NUMBER];                              // 按键状态
+uint32_t             scanner_period = 1;                                 // 按键的扫描周期
+uint32_t             key_press_time[KEY_NUMBER];                         // 按键信号持续时长
+key_state_enum       key_state[KEY_NUMBER];                              // 按键状态
 
 static const char *key_index[KEY_NUMBER] = KEY_LIST;
 

@@ -609,6 +609,30 @@ home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driv
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 .PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o: home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o
+
+# target to build an object file
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
+
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i: home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i
+
+# target to preprocess a source file
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
+
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s: home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s
+
+# target to generate assembly for a file
+home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
+.PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
+
 home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o: home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o
 .PHONY : home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o
 
@@ -750,6 +774,9 @@ help:
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o"
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i"
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s"
+	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o"
+	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i"
+	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s"
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o"
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.i"
 	@echo "... home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.s"

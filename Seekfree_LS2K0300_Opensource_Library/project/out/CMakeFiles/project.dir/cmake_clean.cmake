@@ -39,6 +39,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o.d"
   "CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o"
   "CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o.d"
+  "CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o"
+  "CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o.d"
   "CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o"
   "CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o.d"
   "CMakeFiles/project.dir/home/lhx/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o"
