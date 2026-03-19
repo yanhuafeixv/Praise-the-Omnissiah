@@ -53,7 +53,7 @@
 // 2.打开终端可以看到:
 // key_0 = x.
 // key_1 = x.
-// key_2 = x.
+// key_2 = x.  测试
 // key_3 = x.
 // switch_0 = x.
 // switch_1 = x.
