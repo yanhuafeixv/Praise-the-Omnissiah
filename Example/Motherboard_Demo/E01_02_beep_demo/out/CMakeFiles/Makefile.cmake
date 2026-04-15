@@ -10,8 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
-  "/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/user/CMakeLists.txt"
-  "/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/user/cross.cmake"
+  "/home/yingmu/LS2K0300_Library/Example/Motherboard_Demo/E01_02_beep_demo/user/CMakeLists.txt"
+  "/home/yingmu/LS2K0300_Library/Example/Motherboard_Demo/E01_02_beep_demo/user/cross.cmake"
   "/opt/ls_2k0300_env/opencv_4_10_build/lib/cmake/opencv4/OpenCVConfig-version.cmake"
   "/opt/ls_2k0300_env/opencv_4_10_build/lib/cmake/opencv4/OpenCVConfig.cmake"
   "/opt/ls_2k0300_env/opencv_4_10_build/lib/cmake/opencv4/OpenCVModules-release.cmake"
@@ -133,5 +133,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/project.dir/DependInfo.cmake"
+  "CMakeFiles/E01_02_beep_demo.dir/DependInfo.cmake"
   )
