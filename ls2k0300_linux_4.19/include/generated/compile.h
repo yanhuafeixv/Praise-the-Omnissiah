@@ -1,7 +1,7 @@
-/* This file is auto generated, version 231 */
+/* This file is auto generated, version 250 */
 /* SMP */
 #define UTS_MACHINE "loongarch64"
-#define UTS_VERSION "#231 SMP Wed Mar 18 00:09:09 CST 2026"
-#define LINUX_COMPILE_BY "lhx"
-#define LINUX_COMPILE_HOST "lhx-VMware-Virtual-Platform"
+#define UTS_VERSION "#250 SMP Thu Apr 23 21:44:34 CST 2026"
+#define LINUX_COMPILE_BY "yingmu"
+#define LINUX_COMPILE_HOST "yingmu-VMware-Virtual-Platform"
 #define LINUX_COMPILER "gcc version 8.3.0 (LoongArch GNU toolchain rc1.6 (20241115))"

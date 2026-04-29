@@ -30,5 +30,5 @@ typedef enum
 
 void key_scanner (void);
 key_state_enum key_get_state (key_index_enum key_n);
-
+// void myi2c_test(void);
 #endif
