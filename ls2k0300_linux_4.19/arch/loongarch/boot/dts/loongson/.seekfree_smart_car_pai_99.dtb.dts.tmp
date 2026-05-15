@@ -963,6 +963,7 @@
   };
   i2c0_mux_m1: i2c0-mux-m1{
    loongson,pinmux = <&gpa3 12 13>;
+
    loongson,pinmux-funcsel = <1>;
   };
  };
@@ -1219,6 +1220,11 @@
   loongson,pinmux-funcsel = <0>;
  };
 
+ i2c_gpio_p88: i2c_gpio_p88 {
+     loongson,pinmux = <&gpa5 8 8>;
+     loongson,pinmux-funcsel = <0>;
+ };
+# 555 "arch/loongarch/boot/dts/loongson/2k0300-pinctrl.dtsi"
 };
 # 685 "arch/loongarch/boot/dts/loongson/loongson_2k0300.dtsi" 2
 # 2 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts" 2
@@ -1341,29 +1347,23 @@
         duty = <0>;
         duty_max = <10000>;
     };
-
-
-
-
-
-
-
-    zf_device_pwm_esc_1{
+# 148 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
+    zf_driver_gpio_myi2c_scl {
         status = "okay";
-        compatible = "seekfree,gpio_out";
-        gpios = <&gpa5 8 0>;
+       compatible = "seekfree,gpio_out";
+       gpios = <&gpa5 8 0>;
 
-        drive-open-drain;
-    };
+       drive-open-drain;
+};
 
-    zf_device_pwm_esc_2{
+    zf_driver_gpio_myi2c_sda {
         status = "okay";
         compatible = "seekfree,gpio_out";
         gpios = <&gpa5 9 0>;
 
         drive-open-drain;
     };
-# 167 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
+# 177 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
     zf_device_pwm_motor_1{
         compatible = "seekfree,pwm";
         pwms = <&pwm1 0 1000000>;
@@ -1495,40 +1495,7 @@
         debug = <0x0>;
     };
 };
-
-
-
-
-
-&pwm0{
-    status = "okay";
-    pinctrl-names = "default";
-    pinctrl-0 = <&pwm0_mux_m0>;
-    clock-frequency = <100000000>;
-    compatible = "seekfree,encoder";
-    encoder-dir-gpio = <&gpa3 3 0>;
-    dev-name = "zf_encoder_1";
-};
-
-
-
-
-&pwm3{
-    status = "okay";
-    pinctrl-names = "default";
-    pinctrl-0 = <&pwm3_mux_m0>;
-    clock-frequency = <100000000>;
-    reg = <0 0x1611b030 0 0x10>;
-    compatible = "seekfree,encoder";
-    encoder-dir-gpio = <&gpa3 2 0>;
-    dev-name = "zf_encoder_2";
-};
-
-
-
-
-
-
+# 342 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
 &pwm1{
     status = "okay";
     pinctrl-names = "default";
@@ -1573,4 +1540,18 @@
 
 &adc{
  status = "okay";
+};
+
+
+&i2c1 {
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&i2c1_mux_m0>;
+    clock-frequency = <100000>;
+
+    pca9685: pca@40 {
+        compatible = "nxp,pca9685-pwm";
+        reg = <0x40>;
+         #pwm-cells = <2>;
+    };
 };

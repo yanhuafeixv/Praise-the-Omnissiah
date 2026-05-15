@@ -12,5 +12,7 @@ void MyI2C_SendByte(uint8 Byte);
 uint8 MyI2C_ReceiveByte(void);
 void MyI2C_SendAck(uint8 AckBit);
 uint8 MyI2C_ReceiveAck(void);
+void MyI2C_W_SDA(uint8_t BitValue);
+void MyI2C_W_SCL(uint8_t BitValue);
 
 #endif

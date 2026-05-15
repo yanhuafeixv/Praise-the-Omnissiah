@@ -5,22 +5,22 @@
 #define myi2c_test_gpio "/dev/zf_driver_gpio_motor_1"
 #define myi2c_test_gpio2 "/dev/zf_driver_gpio_motor_2"
 
-#define myi2c_scl "/dev/zf_device_pwm_esc_1"  //gpio88
-#define myi2c_sda "/dev/zf_device_pwm_esc_2"  //gpio 89
+#define myi2c_scl "/dev/zf_driver_gpio_myi2c_scl"  //gpio88
+#define myi2c_sda "/dev/zf_driver_gpio_myi2c_sda"  //gpio 89
 
 
 int test_cnt=0;
 void myi2c_test(void)
 {
 	if(test_cnt%2==0){
-    gpio_set_level(myi2c_scl, 0);
-    gpio_set_level(myi2c_sda, 1);
+    gpio_set_level(myi2c_test_gpio, 0);
+    gpio_set_level(myi2c_test_gpio2, 1);
 	test_cnt++;
 
 	printf("sda 1, scl 0\n");
 	}else{
-	gpio_set_level(myi2c_scl, 1);
-	gpio_set_level(myi2c_sda, 0);
+	gpio_set_level(myi2c_test_gpio2, 1);
+	gpio_set_level(myi2c_test_gpio2, 0);
 	test_cnt++;
 	printf("sda 0, scl 1\n");
 	}
@@ -31,72 +31,82 @@ void myi2c_test(void)
 }
 
 
-void MyI2C_W_SCL(uint8 BitValue)
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+int myi2c_scl_fd = -1;
+int myi2c_sda_fd = -1;
+
+// ===================== 底层驱动接口 =====================
+int gpio_set_output(int fd)
 {
-	gpio_set_level(myi2c_scl, BitValue);                       //根据BitValue，设置SCL引脚的电平
-	system_delay_us(10);										 //延时10us，防止时序频率超过要求
-    
-    
+    ioctl(fd, 0, 0); // 0 = 输出模式
+    return 0;
 }
 
-/**
-  * 函    数：I2C写SDA引脚电平
-  * 参    数：BitValue 协议层传入的当前需要写入SDA的电平，范围0~1
-  * 返 回 值：无
-  * 注意事项：此函数需要用户实现内容，当BitValue为0时，需要置SDA为低电平，当BitValue为1时，需要置SDA为高电平
-  */
-void MyI2C_W_SDA(uint8 BitValue)
+int gpio_set_input(int fd)
 {
-	gpio_set_level(myi2c_sda, BitValue);		//根据BitValue，设置SDA引脚的电平，BitValue要实现非0即1的特性
-	system_delay_us(10);												//延时10us，防止时序频率超过要求
+    ioctl(fd, 1, 0); // 1 = 输入模式
+    return 0;
+}
+// ===================== I2C 初始化 =====================
+void MyI2C_Init(void)
+{
+    // 打开设备文件
+    myi2c_scl_fd = open(myi2c_scl, O_RDWR);
+    myi2c_sda_fd = open(myi2c_sda, O_RDWR);
 
+    if (myi2c_scl_fd < 0 || myi2c_sda_fd < 0) {
+        perror("open i2c gpio dev failed");
+        return;
+    }
 
-	printf("myi2c_w_sda: %d\n", BitValue);
+    // 初始化：SCL/SDA 都设为输入（高阻，总线空闲）
+    gpio_set_input(myi2c_scl_fd);
+    gpio_set_input(myi2c_sda_fd);
+
+    printf("myi2c_init()\n");
 }
 
-/**
-  * 函    数：I2C读SDA引脚电平
-  * 参    数：无
-  * 返 回 值：协议层需要得到的当前SDA的电平，范围0~1
-  * 注意事项：此函数需要用户实现内容，当前SDA为低电平时，返回0，当前SDA为高电平时，返回1
-  */
-uint8 MyI2C_R_SDA(void)
+// ===================== I2C 写 SCL =====================
+void MyI2C_W_SCL(uint8_t BitValue)
 {
-	uint8 BitValue;
-	BitValue = gpio_get_level(myi2c_sda);		//读取SDA电平
-	system_delay_us(10);												//延时10us，防止时序频率超过要求
-
-	printf("myi2c_r_sda: %d\n", BitValue);
-
-	return BitValue;											//返回SDA电平
+    if (BitValue == 1) {
+        // 高电平：设为输入（高阻，靠外部上拉拉高）
+        gpio_set_input(myi2c_scl_fd);
+    } else {
+        // 低电平：设为输出，拉低
+        gpio_set_output(myi2c_scl_fd);
+        gpio_set_level(myi2c_scl, 0);
+    }
+    system_delay_us(10);
 }
 
-/**
-  * 函    数：I2C初始化
-  * 参    数：无
-  * 返 回 值：无
-  * 注意事项：此函数需要用户实现内容，实现SCL和SDA引脚的初始化
-  */
-void MyI2C_Init(void)             //设置scl和sda为开漏输出，并默认高电平,需要修改设备树
+// ===================== I2C 写 SDA =====================
+void MyI2C_W_SDA(uint8_t BitValue)
 {
-	// /*开启时钟*/
-	// RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);	//开启GPIOB的时钟
-	
-	// /*GPIO初始化*/
-	// GPIO_InitTypeDef GPIO_InitStructure;
-	// GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
-	// GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11;
-	// GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	// GPIO_Init(GPIOB, &GPIO_InitStructure);					//将PB10和PB11引脚初始化为开漏输出
-	
-	// /*设置默认电平*/
-	// GPIO_SetBits(GPIOB, GPIO_Pin_10 | GPIO_Pin_11);			//设置PB10和PB11引脚初始化后默认为高电平（释放总线状态）
+    if (BitValue == 1) {
+        // 高电平：设为输入（高阻）
+        gpio_set_input(myi2c_sda_fd);
+    } else {
+        // 低电平：设为输出，拉低
+        gpio_set_output(myi2c_sda_fd);
+        gpio_set_level(myi2c_sda, 0);
+    }
+    system_delay_us(10);
+    printf("myi2c_w_sda: %d\n", BitValue);
+}
 
-    gpio_set_level(myi2c_scl, 1);						//设置SCL引脚为高电平
-    gpio_set_level(myi2c_sda, 1);						//设置SDA引脚为高电平
-
-	printf("myi2c_init()\n");
-
+// ===================== I2C 读 SDA =====================
+uint8_t MyI2C_R_SDA(void)
+{
+    uint8_t BitValue;
+    // 读之前，先把SDA设为输入
+    gpio_set_input(myi2c_sda_fd);
+    BitValue = gpio_get_level(myi2c_sda);
+    system_delay_us(10);
+    printf("myi2c_r_sda: %d\n", BitValue);
+    return BitValue;
 }
 
 /*协议层*/

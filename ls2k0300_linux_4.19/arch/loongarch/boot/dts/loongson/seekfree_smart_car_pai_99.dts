@@ -125,15 +125,35 @@
 
 
     // ----------电调PWM---------- //
-    zf_device_pwm_esc_1{
+   // zf_device_pwm_esc_1{
+   //     status = "okay";
+   //     compatible = "seekfree,gpio_out";
+   //     gpios = <&gpa5 8 GPIO_ACTIVE_HIGH>;
+//
+   //     drive-open-drain;
+  //  };
+//
+  //  zf_device_pwm_esc_2{
+  //      status = "okay";
+  //      compatible = "seekfree,gpio_out";
+  //     gpios = <&gpa5 9 GPIO_ACTIVE_HIGH>;
+//
+  //      drive-open-drain;
+ //   };
+    // ----------电调PWM---------- //
+
+
+
+//----------自定义p88，p89-------//
+    zf_driver_gpio_myi2c_scl {
         status = "okay";
-        compatible = "seekfree,gpio_out";
-        gpios = <&gpa5 8 GPIO_ACTIVE_HIGH>;
+       compatible = "seekfree,gpio_out";
+       gpios = <&gpa5 8 GPIO_ACTIVE_HIGH>;
 
-        drive-open-drain;
-    };
+       drive-open-drain;
+};
 
-    zf_device_pwm_esc_2{
+    zf_driver_gpio_myi2c_sda {
         status = "okay";
         compatible = "seekfree,gpio_out";
         gpios = <&gpa5 9 GPIO_ACTIVE_HIGH>;
@@ -144,18 +164,8 @@
 
 
 
-//----------自定义p88，p89-------//
- //   zf_driver_gpio_myi2c_scl{
- //      status = "okay";
-  //     compatible = "seekfree,gpio_out";
-  //     gpios = <&gpa5 8 GPIO_ACTIVE_HIGH>;
-//	};
-//
- //   zf_driver_gpio_myi2c_sda{
-  //      status = "okay";
-  //      compatible = "seekfree,gpio_out";
- //       gpios = <&gpa5 9 GPIO_ACTIVE_HIGH>;
-//	};
+
+
 
 
 //----------自定义p88，p89-------//
@@ -300,29 +310,29 @@
 // ----------带方向编码器配置---------- //
 // 编码器1
 // PWM0 GPIO64
-&pwm0{
-    status = "okay";
-    pinctrl-names = "default";
-    pinctrl-0 = <&pwm0_mux_m0>;
-    clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
-    compatible = "seekfree,encoder";
-    encoder-dir-gpio = <&gpa3 3 GPIO_ACTIVE_HIGH>;  // GPIO051
-    dev-name = "zf_encoder_1";
-};
+//&pwm0{
+ //   status = "okay";
+ //   pinctrl-names = "default";
+ //   pinctrl-0 = <&pwm0_mux_m0>;
+ //   clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
+ //   compatible = "seekfree,encoder";
+ //   encoder-dir-gpio = <&gpa3 3 GPIO_ACTIVE_HIGH>;  // GPIO051
+ //   dev-name = "zf_encoder_1";
+//};
 
 
 // 编码器2
 // PWM3 GPIO67
-&pwm3{
-    status = "okay";
-    pinctrl-names = "default";
-    pinctrl-0 = <&pwm3_mux_m0>;
-    clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
-    reg = <0 0x1611b030 0 0x10>;
-    compatible = "seekfree,encoder";
-    encoder-dir-gpio = <&gpa3 2 GPIO_ACTIVE_HIGH>;  // GPIO050
-    dev-name = "zf_encoder_2";
-};
+//&pwm3{
+//    status = "okay";
+ //   pinctrl-names = "default";
+ //   pinctrl-0 = <&pwm3_mux_m0>;
+ //   clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
+ //   reg = <0 0x1611b030 0 0x10>;
+ //   compatible = "seekfree,encoder";
+ //   encoder-dir-gpio = <&gpa3 2 GPIO_ACTIVE_HIGH>;  // GPIO050
+ //   dev-name = "zf_encoder_2";
+//};
 // ----------带方向编码器配置---------- //
 
 // ----------电机PWM配置---------- //
@@ -375,3 +385,17 @@
 	status = "okay";
 };
 // ----------ADC配置----------//
+
+&i2c1 {
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&i2c1_mux_m0>;           // 使用 GPIO50, GPIO51
+    clock-frequency = <100000>;            // PCA9685 支持 100kHz
+
+    pca9685: pca@40 {
+        compatible = "nxp,pca9685-pwm";
+        reg = <0x40>;                      // 7位地址，STM32代码中左移后是0x80
+         #pwm-cells = <2>;          // 必须，用作 PWM 控制器
+    };
+};
+

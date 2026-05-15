@@ -93484,7 +93484,7 @@ kallsyms_offsets:
 	.long	0x123fb40
 	.long	0x123fb40
 	.long	0x123fb40
-	.long	0x1245790
+	.long	0x124578a
 	.long	0x12457a0
 	.long	0x12457a0
 	.long	0x12457a0

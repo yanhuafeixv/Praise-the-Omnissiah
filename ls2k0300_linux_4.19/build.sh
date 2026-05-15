@@ -5,6 +5,6 @@ export PATH=/opt/ls_2k0300_env/loongson-gnu-toolchain-8.3-x86_64-loongarch64-lin
 
 make -j12
 
-scp -O vmlinuz root@192.168.206.7:/boot
+scp -O vmlinuz root@192.168.23.7:/boot
 
 sync

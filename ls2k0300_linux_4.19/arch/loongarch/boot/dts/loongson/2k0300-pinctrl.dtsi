@@ -280,6 +280,7 @@
 		};
 		i2c0_mux_m1: i2c0-mux-m1{                            /* I2C0 have two multiplex methods */
 			loongson,pinmux = <&gpa3 12 13>;
+			
 			loongson,pinmux-funcsel = <PINCTL_FUNCTION1>;
 		};
 	};
@@ -535,6 +536,21 @@
 		loongson,pinmux =  <&gpa2 12 13>, <&gpa0 13 14>;
 		loongson,pinmux-funcsel = <PINCTL_FUNCTIONGPIO>;
 	};
+
+	i2c_gpio_p88: i2c_gpio_p88 {
+    	loongson,pinmux = <&gpa5 8 8>;
+    	loongson,pinmux-funcsel = <PINCTL_FUNCTIONGPIO>;
+	};
+
+// 给 P89 (gpa5 9) 配置成 GPIO 模式
+//	i2c_gpio_p89: i2c_gpio_p89 {
+ //   	loongson,pinmux = <&gpa5 9 9>;
+//   	loongson,pinmux-funcsel = <PINCTL_FUNCTIONGPIO>;
+//	};
+
+
+
+
 
 };
 

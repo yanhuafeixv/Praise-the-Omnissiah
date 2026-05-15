@@ -93479,7 +93479,7 @@
 900000000143fb40 T __cpuidle_method_of_table
 900000000143fb40 T __dtb_seekfree_smart_car_pai_99_begin
 900000000143fb40 T __dtb_start
-9000000001445790 T __dtb_seekfree_smart_car_pai_99_end
+900000000144578a T __dtb_seekfree_smart_car_pai_99_end
 90000000014457a0 T __dtb_end
 90000000014457a0 T __irqchip_of_table
 90000000014457a0 t __of_table_cpu_intc
