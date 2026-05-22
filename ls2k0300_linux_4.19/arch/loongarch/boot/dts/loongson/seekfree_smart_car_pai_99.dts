@@ -386,16 +386,14 @@
 };
 // ----------ADC配置----------//
 
+
 &i2c1 {
     status = "okay";
     pinctrl-names = "default";
-    pinctrl-0 = <&i2c1_mux_m0>;           // 使用 GPIO50, GPIO51
-    clock-frequency = <100000>;            // PCA9685 支持 100kHz
-
-    pca9685: pca@40 {
-        compatible = "nxp,pca9685-pwm";
-        reg = <0x40>;                      // 7位地址，STM32代码中左移后是0x80
-         #pwm-cells = <2>;          // 必须，用作 PWM 控制器
-    };
+    pinctrl-0 = <&i2c1_mux_m0>;          // 使用 GPIO50, GPIO51
+    clock-frequency = <100000>;
+    /* 不要定义任何子设备！ */
 };
+
+
 

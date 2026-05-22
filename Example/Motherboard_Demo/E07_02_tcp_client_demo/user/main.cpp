@@ -62,14 +62,19 @@
 // **************************** 代码区域 ****************************
 
 // 另外一端的IP地址
-#define SERVER_IP "192.168.2.32"
+#define SERVER_IP "192.168.23.117"
 // 端口号
-#define PORT 8888
+#define PORT 8060
 
 uint32  read_len = 0;
 uint8   recv_buff[1024];
 uint8   temp_str[] = "seekfree this is TCP demo.\r\n";
 uint8   read_str[] = "read data:\r\n";
+
+#include<zf_device_imu963ra.h>
+double acc_x,acc_y,acc_z;//接收imu数据 
+
+
 
 int main(int, char**) 
 {
@@ -94,15 +99,20 @@ int main(int, char**)
 
     while (true) 
     {
-        // 非阻塞式读取TCP数据。
-        read_len = tcp_client_read_data(recv_buff, 1024);
-        // 回显TCP数据。
-        if(read_len > 0)
-        {
-            tcp_client_send_data(read_str, sizeof(read_str));
-            tcp_client_send_data(recv_buff, read_len);
-        }
+        // // 非阻塞式读取TCP数据。
+        // read_len = tcp_client_read_data(recv_buff, 1024);
+        // // 回显TCP数据。
+        // if(read_len > 0)
+        // {
+        //     tcp_client_send_data(read_str, sizeof(read_str));
+        //     tcp_client_send_data(recv_buff, read_len);
+        // }
   
+    acc_x = imu_get_raw(imu_file_path[ACC_X_RAW]);
+    acc_y = imu_get_raw(imu_file_path[ACC_Y_RAW]);
+    acc_z = imu_get_raw(imu_file_path[ACC_Z_RAW]);
+    printf("%lf\n",acc_x);
+
         system_delay_ms(1000);
     }
 

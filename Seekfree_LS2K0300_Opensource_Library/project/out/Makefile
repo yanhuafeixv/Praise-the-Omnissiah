@@ -609,30 +609,6 @@ home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_d
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.o
-
-# target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.o
-
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.i
-
-# target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.i
-
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.s
-
-# target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.cpp.s
-
 home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o
 
@@ -705,53 +681,29 @@ home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/m
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.o
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.o
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.i
-
-# target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.i
-
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.s
-
-# target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.cpp.s
-
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.o
-
-# target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.o
-
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.i
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.i
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.s
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.cpp.s
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -846,9 +798,6 @@ help:
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/PCA9685.s"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s"
@@ -858,12 +807,9 @@ help:
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/myi2c.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_linux.s"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

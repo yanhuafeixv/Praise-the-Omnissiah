@@ -1543,15 +1543,11 @@
 };
 
 
+
 &i2c1 {
     status = "okay";
     pinctrl-names = "default";
     pinctrl-0 = <&i2c1_mux_m0>;
     clock-frequency = <100000>;
 
-    pca9685: pca@40 {
-        compatible = "nxp,pca9685-pwm";
-        reg = <0x40>;
-         #pwm-cells = <2>;
-    };
 };

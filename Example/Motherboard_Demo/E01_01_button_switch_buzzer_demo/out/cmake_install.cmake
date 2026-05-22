@@ -1,4 +1,4 @@
-# Install script for directory: /home/lhx/LS2K0300_Library/Example/Motherboard_Demo/E01_01_button_switch_buzzer_demo/user
+# Install script for directory: /home/yingmu/LS2K0300_Library/Example/Motherboard_Demo/E01_01_button_switch_buzzer_demo/user
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lhx/LS2K0300_Library/Example/Motherboard_Demo/E01_01_button_switch_buzzer_demo/out/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yingmu/LS2K0300_Library/Example/Motherboard_Demo/E01_01_button_switch_buzzer_demo/out/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

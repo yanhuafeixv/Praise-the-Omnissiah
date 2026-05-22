@@ -66,8 +66,18 @@
 // 
 // 如果发现现象与说明严重不符 请参照本文件最下方 例程常见问题说明 进行排查
 
-timer_fd *pit_timer;
 
+// **************************** 网络配置 ****************************
+#define SERVER_IP "192.168.23.117"   // 上位机 IP
+#define PORT      8060             // 端口号
+// **************************************************************
+
+
+
+timer_fd *pit_timer;
+char send_buf[256];                // 发送缓冲区
+
+// 定时器回调：只更新 IMU 数据（原代码不变）
 void pit_callback()
 {
     if(DEV_IMU660RA == imu_type || DEV_IMU660RB == imu_type)
@@ -75,7 +85,6 @@ void pit_callback()
         imu_acc_x = imu_get_raw(imu_file_path[ACC_X_RAW]);
         imu_acc_y = imu_get_raw(imu_file_path[ACC_Y_RAW]);
         imu_acc_z = imu_get_raw(imu_file_path[ACC_Z_RAW]);
-    
         imu_gyro_x = imu_get_raw(imu_file_path[GYRO_X_RAW]);
         imu_gyro_y = imu_get_raw(imu_file_path[GYRO_Y_RAW]);
         imu_gyro_z = imu_get_raw(imu_file_path[GYRO_Z_RAW]);
@@ -85,95 +94,64 @@ void pit_callback()
         imu_acc_x = imu_get_raw(imu_file_path[ACC_X_RAW]);
         imu_acc_y = imu_get_raw(imu_file_path[ACC_Y_RAW]);
         imu_acc_z = imu_get_raw(imu_file_path[ACC_Z_RAW]);
-    
         imu_gyro_x = imu_get_raw(imu_file_path[GYRO_X_RAW]);
         imu_gyro_y = imu_get_raw(imu_file_path[GYRO_Y_RAW]);
         imu_gyro_z = imu_get_raw(imu_file_path[GYRO_Z_RAW]);
-
         imu_mag_x = imu_get_raw(imu_file_path[MAG_X_RAW]);
         imu_mag_y = imu_get_raw(imu_file_path[MAG_Y_RAW]);
         imu_mag_z = imu_get_raw(imu_file_path[MAG_Z_RAW]);
     }
 }
 
-
 int main(int, char**) 
 {
-
+    // 1. 识别 IMU 型号
     imu_get_dev_info();
-    
-    if(DEV_IMU660RA == imu_type)
-    {
-        printf("IMU DEV IS IMU660RA\r\n");
-    }
-    else if(DEV_IMU660RB == imu_type)
-    {
-        printf("IMU DEV IS IMU660RB\r\n");
-    }
-    else if(DEV_IMU963RA == imu_type)
-    {
-        printf("IMU DEV IS IMU963RA\r\n");
-    }
-    else
-    {
-        printf("NO FIND IMU DEV\r\n");
+    if(DEV_IMU660RA == imu_type)      printf("IMU DEV IS IMU660RA\r\n");
+    else if(DEV_IMU660RB == imu_type) printf("IMU DEV IS IMU660RB\r\n");
+    else if(DEV_IMU963RA == imu_type) printf("IMU DEV IS IMU963RA\r\n");
+    else { printf("NO FIND IMU DEV\r\n"); return -1; }
+
+    // 2. 初始化 TCP 客户端（必须在上位机打开 TCP 服务器后再运行）
+    if(tcp_client_init(SERVER_IP, PORT) == 0)
+        printf("tcp_client ok\r\n");
+    else {
+        printf("tcp_client error\r\n");
         return -1;
     }
-    
-    // // 创建一个定时器10ms周期，回调函数为pit_callback
-    // pit_ms_init(10, pit_callback);
 
-    // 创建一个定时器10ms周期，回调函数为pit_callback
+    // 3. 注册逐飞助手接口（用于虚拟示波器等协议）
+    seekfree_assistant_interface_init(tcp_client_send_data, tcp_client_read_data);
+
+    // 4. 启动定时器（10ms 更新一次 IMU 数据）
     pit_timer = new timer_fd(10, pit_callback);
     pit_timer->start();
 
+    // 5. 主循环：每 20ms 发送一次符合 Printf 协议的数据包
     while(1)
     {
-
+        // 根据 IMU 型号拼接字符串，格式：描述:数据1,数据2,...,数据N\n
         if(DEV_IMU660RA == imu_type || DEV_IMU660RB == imu_type)
         {
-            printf("imu_acc_x  = %d\r\n", imu_acc_x);
-            printf("imu_acc_y  = %d\r\n", imu_acc_y);
-            printf("imu_acc_z  = %d\r\n", imu_acc_z);
-    
-            printf("imu_gyro_x = %d\r\n", imu_gyro_x);
-            printf("imu_gyro_y = %d\r\n", imu_gyro_y);
-            printf("imu_gyro_z = %d\r\n", imu_gyro_z);
+            snprintf(send_buf, sizeof(send_buf),
+                "imu: %d, %d, %d, %d, %d, %d\n",
+                imu_acc_x, imu_acc_y, imu_acc_z,
+                imu_gyro_x, imu_gyro_y, imu_gyro_z);
         }
         else if(DEV_IMU963RA == imu_type)
         {
-            printf("imu_acc_x  = %d\r\n", imu_acc_x);
-            printf("imu_acc_y  = %d\r\n", imu_acc_y);
-            printf("imu_acc_z  = %d\r\n", imu_acc_z);
-    
-            printf("imu_gyro_x = %d\r\n", imu_gyro_x);
-            printf("imu_gyro_y = %d\r\n", imu_gyro_y);
-            printf("imu_gyro_z = %d\r\n", imu_gyro_z);
-    
-            printf("imu_mag_x = %d\r\n", imu_mag_x);
-            printf("imu_mag_y = %d\r\n", imu_mag_y);
-            printf("imu_mag_z = %d\r\n", imu_mag_z);
+            snprintf(send_buf, sizeof(send_buf),
+                "imu: %d, %d, %d, %d, %d, %d, %d, %d, %d\n",
+                imu_acc_x, imu_acc_y, imu_acc_z,
+                imu_gyro_x, imu_gyro_y, imu_gyro_z,
+                imu_mag_x, imu_mag_y, imu_mag_z);
         }
 
-
-        system_delay_ms(100);
+        // 通过 TCP 发送
+        tcp_client_send_data((uint8_t*)send_buf, strlen(send_buf));
+        
+        system_delay_ms(20);   // 发送间隔，可调整
     }
+
+    return 0;
 }
-
-// **************************** 代码区域 ****************************
-
-// *************************** 例程常见问题说明 ***************************
-// 遇到问题时请按照以下问题检查列表检查
-// 
-// 问题1：终端提示未找到xxx文件
-//      使用本历程，就需要使用我们逐飞科技提供的内核，否则提示xxx文件找不到
-//      使用本历程，就需要使用我们逐飞科技提供的内核，否则提示xxx文件找不到
-//      使用本历程，就需要使用我们逐飞科技提供的内核，否则提示xxx文件找不到
-// 
-// 问题2：终端输出NO FIND IMU DEV
-//      检查 姿态传感器 的接线是否正确
-//      检查 姿态传感器 的模块是不是坏了
-// 
-// 问题3：姿态传感器 数值异常
-//      看看是不是线松了 或者信号线被短路了
-//      可能模块部分受损
