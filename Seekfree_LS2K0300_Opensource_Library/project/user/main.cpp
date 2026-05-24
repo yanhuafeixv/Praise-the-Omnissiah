@@ -1,40 +1,38 @@
-#include "zf_common_headfile.h"
 #include <stdio.h>
 #include <unistd.h>
-#include "pca9685_servo.h"
+#include "pca9685_servo.h"   // 仅包含头文件
+#include "arm.h"
 
-
-int main(int, char**) {
+int main() {
     if (pca9685_init("/dev/i2c-1", 50.0) < 0) {
         fprintf(stderr, "Init failed.\n");
         return 1;
     }
 
-    // printf("--- Moving servo to 0 deg ---\n");
-    // pca9685_set_servo(0, 0);
-    // sleep(2);
-    // printf("--- Moving servo to 90 deg ---\n");
-    // pca9685_set_servo(0, 90);
-    // sleep(2);
-    // printf("--- Moving servo to 270 deg ---\n");
-    // pca9685_set_servo(0, 270);
-    // sleep(2);
+    // printf("PCA9685 ready. Moving servo...\n");
+    // for (int angle = 7; angle <= 220; angle += 1) {
+    //     printf("Angle: %d\n", angle);
+    //     pca9685_set_servo(0, angle);
+    //     sleep(1);
+    // }
 
-    int angle = 0;
-    for(angle = 50; angle <= 220; angle += 1) {
-        printf("--- Moving servo to %d deg ---\n", angle);
-        pca9685_set_servo(0, angle);
-        sleep(1);
-        system_delay_ms(2000);
+    // arm_open();
+    // sleep(1);
+    // arm_close();
+    // sleep(1);
+    // arm_stand();
+
+
+    while(1)
+    {
+
+        pca9685_set_servo(0, 0);     //底盘旋转角度
+        pca9685_set_servo(3, 180);    //第一段机械臂角度
+        pca9685_set_servo(7, 270);    //第二段机械
+        pca9685_set_servo(11, 0);   //夹爪
+    
     }
 
-    // while(1)
-    // {
-    //         pca9685_set_servo(0, 120);
-    //         printf("Angle: %d\n", 120);
-    //     sleep(1);
-    //     // system_delay_ms(2000);
-    // }
     pca9685_close();
     return 0;
 }

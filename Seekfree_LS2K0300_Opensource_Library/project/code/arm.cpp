@@ -24,43 +24,65 @@
  	l1 = arm1_length; 	//底部圆盘高度	            
  	l2 = arm2_length;    //机械臂长度
 	
-// 1. 计算水平距离 r
+// // 1. 计算水平距离 r
+//     double r = sqrt(x * x + y * y);
+//     // 2. 求解 j1（注意 atan2(y, x) 返回弧度）
+//     double j1_rad = atan2(y, x);
+//     j1 = (int16_t) round(j1_rad * 180.0 / M_PI);
+//     // 3. 将空间坐标转化为平面坐标 (p, q)
+//     double p = r;                // 水平投影距离
+//     double q = z - h;            // 垂直高度差
+//     // 4. 计算中间值 d = cos(j3)
+//     double d = (p * p + q * q - l1 * l1 - l2 * l2) / (2.0 * l1 * l2);
+//     if (d < -1.0 || d > 1.0) {
+//         return ;               // 目标点超出机械臂可达域
+//     }
+//     // 5. 求解 j3（取负值，即肘关节通常向下折叠）
+//     //    若需要另一组解，可将以下改为  j3_rad = acos(d);
+//     double j3_rad = -acos(d);   // 取肘部“下折”解
+//     // double j3_rad = acos(d); // 另一组解
+//     // 6. 求解 j2
+//     double phi = atan2(p, q);   // φ = atan2(r, z-h)
+//     double beta = atan2(l2 * sin(j3_rad), l1 + l2 * cos(j3_rad));
+//     double j2_rad = phi - beta;
+//     // 7. 转为度并四舍五入到 int16
+//     j2 = (int16_t) round(j2_rad * 180.0 / M_PI);
+//     j3 = (int16_t) round(j3_rad * 180.0 / M_PI);
+
+
+
     double r = sqrt(x * x + y * y);
-    // 2. 求解 j1（注意 atan2(y, x) 返回弧度）
-    double j1_rad = atan2(y, x);
+    // 2. 关节1：tan(j1) = x/y
+    double j1_rad = atan2(x, y);               // 范围 (-π, π]
     j1 = (int16_t) round(j1_rad * 180.0 / M_PI);
-    // 3. 将空间坐标转化为平面坐标 (p, q)
-    double p = r;                // 水平投影距离
-    double q = z - h;            // 垂直高度差
-    // 4. 计算中间值 d = cos(j3)
-    double d = (p * p + q * q - l1 * l1 - l2 * l2) / (2.0 * l1 * l2);
-    if (d < -1.0 || d > 1.0) {
-        return ;               // 目标点超出机械臂可达域
+    // 3. 平面坐标 (p, q) = (水平投影, 垂直高度差)
+    double p = r;                               // p = r
+    double q = z - h;                           // q = z - h
+    // 4. 余弦定理求 j3
+    double cos_j3 = (p * p + q * q - l1 * l1 - l2 * l2) / (2.0 * l1 * l2);
+    if (cos_j3 < -1.0 || cos_j3 > 1.0) {
+        return ;                              // 不可达
     }
-    // 5. 求解 j3（取负值，即肘关节通常向下折叠）
-    //    若需要另一组解，可将以下改为  j3_rad = acos(d);
-    double j3_rad = -acos(d);   // 取肘部“下折”解
-    // double j3_rad = acos(d); // 另一组解
-    // 6. 求解 j2
-    double phi = atan2(p, q);   // φ = atan2(r, z-h)
+    double j3_rad = -acos(cos_j3);              // 肘下折解，j3 < 0
+    // 5. 求解 j2
+    double phi = atan2(p, q);                   // 末端方向角
     double beta = atan2(l2 * sin(j3_rad), l1 + l2 * cos(j3_rad));
     double j2_rad = phi - beta;
-    // 7. 转为度并四舍五入到 int16
     j2 = (int16_t) round(j2_rad * 180.0 / M_PI);
     j3 = (int16_t) round(j3_rad * 180.0 / M_PI);
-
-
-    pca9685_set_servo(0, j1);
+    pca9685_set_servo(0, 10-j1);
     printf("Angle: %d\n", j1);
     sleep(1);
     system_delay_ms(1000);
 
-    pca9685_set_servo(1, j2);
+   // pca9685_set_servo(3, 50-j2);
+        pca9685_set_servo(3, 0);
+
     printf("Angle: %d\n", j2);
     sleep(1);
     system_delay_ms(1000);
 
-    pca9685_set_servo(2, j3);
+    pca9685_set_servo(7, 74+j3);
     printf("Angle: %d\n", j3);
     sleep(1);
     system_delay_ms(1000);
@@ -71,3 +93,35 @@
 
 }
 
+void arm_open(void)
+{
+    pca9685_set_servo(11, 47);   //假设舵机4控制夹爪
+    printf("Gripper opened.\n");
+    sleep(1);
+    system_delay_ms(1000);
+}
+
+void arm_close(void)
+{
+    pca9685_set_servo(11, 146);  //假设舵机4控制夹爪
+    printf("Gripper closed.\n");
+    sleep(1);
+    system_delay_ms(1000);
+}
+
+void arm_stand(void)
+{
+    pca9685_set_servo(0, 10);     //底盘旋转角度
+    sleep(1);
+    system_delay_ms(1000);
+
+    pca9685_set_servo(3, 50);    //第一段机械臂角度
+    sleep(1);
+    system_delay_ms(1000);
+
+    pca9685_set_servo(7, 74);    //第二段机械臂角度
+    sleep(1);
+    system_delay_ms(1000);
+
+    return ;
+}
