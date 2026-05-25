@@ -1,5 +1,6 @@
 #ifndef PCA9685_SERVO_H
 #define PCA9685_SERVO_H
+#include "zf_common_headfile.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -8,6 +9,7 @@ extern "C" {
 int pca9685_init(const char *i2c_device, float freq);
 void pca9685_set_servo(int channel, int angle);
 void pca9685_close(void);
+void pca9685_set_servo_off(int channel, uint32_t off);
 
 #ifdef __cplusplus
 }

@@ -30,9 +30,17 @@ int main() {
         pca9685_set_servo(3, 180);    //第一段机械臂角度
         pca9685_set_servo(7, 270);    //第二段机械
         pca9685_set_servo(11, 0);   //夹爪
-    
+        // pca9685_set_servo_off(1,550);
+        pca9685_set_servo_off(2,525);
+        // // pca9685_set_servo_off(4,512);
+        // // pca9685_set_servo_off(5,520);
+        // for(uint32_t i=550;i>30;i-=1)
+        // {
+        //     pca9685_set_servo_off(8,i);
+        //     sleep(1);
+        // }
     }
-
     pca9685_close();
     return 0;
 }
+//550    80
