@@ -12,11 +12,12 @@
 #define PRESCALE          0xFE
 #define LED0_ON_L         0x06
 
-/* 用户可调整的校准参数 */
-#define SERVO_ANGLE_MAX     270          /* 舵机最大角度 */
-#define SERVO_MIN_US        500          /* 0° 对应的脉宽（微秒） */
-#define SERVO_MAX_US        2500         /* SERVO_ANGLE_MAX 对应的脉宽（微秒） */
-#define FREQ_CALIB_FACTOR   0.98f        /* 频率校准因子，若实际频率偏高可减小此值 */
+/* ----- 180° 舵机参数 ----- */
+#define SERVO_ANGLE_MAX     180          /* 最大角度 */
+#define FREQ_CALIB_FACTOR   0.98f        /* 频率校准因子，若实际频率不准可微调 */
+
+/* 内部常数：0° 时 off 起始值 (对应 0.5ms 脉宽) */
+#define SERVO_OFF_MIN       102
 
 static int i2c_fd = -1;
 
@@ -52,11 +53,11 @@ int pca9685_init(const char *i2c_dev, float freq) {
     // 1. MODE2: 推挽输出
     if (write_reg(MODE2, 0x04) < 0) goto fail;
 
-    // 2. 进入睡眠，开启自动增量 (AI=1)，清除其他位（尤其 ALLCALL=0）
+    // 2. 进入睡眠，开启自动增量 (AI=1)，清除 ALLCALL 位
     if (write_reg(MODE1, 0x30) < 0) goto fail;    // 0x30 = SLEEP + AI
 
-    // 3. 计算预分频器（引入频率校准因子）
-    freq *= FREQ_CALIB_FACTOR;                     // 修正实际振荡器偏差
+    // 3. 计算预分频器（引入频率校准）
+    freq *= FREQ_CALIB_FACTOR;                     // 修正内部振荡器偏差
     prescale_f = 25000000.0f / (4096.0f * freq) - 1.0f;
     if (prescale_f < 3.0f) prescale_f = 3.0f;
     if (prescale_f > 255.0f) prescale_f = 255.0f;
@@ -82,30 +83,29 @@ fail:
     return -1;
 }
 
+/**
+ * @brief 设置 180° 舵机角度
+ * @param channel  通道号 (0~15)
+ * @param angle    角度 0 ~ 180
+ * @note  0° -> off=102, 180° -> off=525，线性插值并四舍五入
+ */
 void pca9685_set_servo(int channel, int angle) {
     if (i2c_fd < 0) return;
     if (channel < 0 || channel > 15) return;
     if (angle < 0) angle = 0;
     if (angle > SERVO_ANGLE_MAX) angle = SERVO_ANGLE_MAX;
 
-    // 将角度线性映射到脉宽（微秒）
-    uint32_t pulse_us = SERVO_MIN_US + 
-                        (uint32_t)angle * (SERVO_MAX_US - SERVO_MIN_US) / SERVO_ANGLE_MAX;
-
-    // 转换为 12 位 OFF 计数值（周期 = 1/频率 秒，但这里直接使用 20000us 对应 50Hz）
-    // 若频率确实为 50Hz，则周期为 20000us；否则需要根据实际频率调整。
-    // 由于初始化时 freq 可能被校准因子修改，实际频率可能略低，但通常仍接近 50Hz。
-    // 我们仍使用 20000us，但为了更精确，可通过全局变量保存实际周期，但此处简化。
-    uint32_t off = (pulse_us * 4096UL) / 20000UL;
-    if (off > 4095) off = 4095;
+    // 线性映射：off = 102 + (angle * (525 - 102)) / 180   (四舍五入)
+    uint32_t off = SERVO_OFF_MIN + (uint32_t)(angle * 423 + 90) / 180;
+    if (off > 4095) off = 4095;   // 安全钳位
 
     uint8_t reg = LED0_ON_L + 4 * channel;
     uint8_t buf[5] = {
         reg,
-        0x00,                      // ON_L
-        0x00,                      // ON_H
+        0x00,                      // ON_L = 0
+        0x00,                      // ON_H = 0
         (uint8_t)(off & 0xFF),     // OFF_L
-        (uint8_t)((off >> 8) & 0x0F)  // OFF_H
+        (uint8_t)((off >> 8) & 0x0F)  // OFF_H 仅低 4 位有效
     };
     if (write(i2c_fd, buf, 5) != 5)
         perror("write servo");
@@ -113,30 +113,10 @@ void pca9685_set_servo(int channel, int angle) {
 
 void pca9685_close(void) {
     if (i2c_fd >= 0) {
-        write_reg(MODE1, 0x10);
+        write_reg(MODE1, 0x10);   // 进入睡眠模式
         close(i2c_fd);
         i2c_fd = -1;
     }
 }
 
-void pca9685_set_servo_off(int channel, uint32_t off) {
-    if (i2c_fd < 0) return;
-    if (channel < 0 || channel > 15) return;
-
-    uint8_t reg = LED0_ON_L + 4 * channel;
-    uint8_t buf[5] = {
-        reg,
-        0x00,
-        0x00,
-        (uint8_t)(off & 0xFF),
-        (uint8_t)((off >> 8) & 0x0F)
-    };
-    if (write(i2c_fd, buf, 5) != 5)
-        perror("write servo");
-
-        printf("off: %u\n", off);
-
-}
-
 }  // extern "C"
-

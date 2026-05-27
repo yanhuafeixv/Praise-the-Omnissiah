@@ -396,4 +396,8 @@
 };
 
 
-
+&cpu_uart2 {
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&uart2_2bit_m0>;    // 使用 GPIO42, GPIO43
+};

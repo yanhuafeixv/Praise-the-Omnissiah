@@ -9,37 +9,26 @@ int main() {
         return 1;
     }
 
-    // printf("PCA9685 ready. Moving servo...\n");
-    // for (int angle = 7; angle <= 220; angle += 1) {
-    //     printf("Angle: %d\n", angle);
-    //     pca9685_set_servo(0, angle);
-    //     sleep(1);
-    // }
-
-    // arm_open();
-    // sleep(1);
-    // arm_close();
-    // sleep(1);
-    // arm_stand();
-
-
     while(1)
     {
+        // pca9685_set_servo(3, 45);     //底盘旋转角度
+        // pca9685_set_servo(7, 135);     //底盘旋转角度
+        // pca9685_set_servo(0, 0);     //底盘旋转角度
+        // pca9685_set_servo(11, 180);     //底盘旋转角度
 
-        pca9685_set_servo(0, 0);     //底盘旋转角度
-        pca9685_set_servo(3, 180);    //第一段机械臂角度
-        pca9685_set_servo(7, 270);    //第二段机械
-        pca9685_set_servo(11, 0);   //夹爪
-        // pca9685_set_servo_off(1,550);
-        pca9685_set_servo_off(2,525);
-        // // pca9685_set_servo_off(4,512);
-        // // pca9685_set_servo_off(5,520);
-        // for(uint32_t i=550;i>30;i-=1)
-        // {
-        //     pca9685_set_servo_off(8,i);
-        //     sleep(1);
-        // }
+        arm_move(-10,12,18);
+       // arm_stand();
     }
+
+    // for(int i=35;i<55;i++)
+    // {
+    //         pca9685_set_servo(3, i);
+    //         pca9685_set_servo(7, 180-i);
+    //         printf("angle: %d\n",i);
+            
+    //         sleep(1);
+
+    // }
     pca9685_close();
     return 0;
 }
