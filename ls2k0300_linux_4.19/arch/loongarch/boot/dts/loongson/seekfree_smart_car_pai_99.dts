@@ -216,7 +216,7 @@
     status = "okay";
     pinctrl-names = "default";
     pinctrl-0 = <&uart1_2bit_m0>;
-    auto-flow-control = <1>;
+    auto-flow-control = <0>;
 };
 
 &gmac0{
