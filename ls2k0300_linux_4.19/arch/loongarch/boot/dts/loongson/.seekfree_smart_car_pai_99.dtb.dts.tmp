@@ -1224,7 +1224,7 @@
      loongson,pinmux = <&gpa5 8 8>;
      loongson,pinmux-funcsel = <0>;
  };
-# 555 "arch/loongarch/boot/dts/loongson/2k0300-pinctrl.dtsi"
+# 553 "arch/loongarch/boot/dts/loongson/2k0300-pinctrl.dtsi"
 };
 # 685 "arch/loongarch/boot/dts/loongson/loongson_2k0300.dtsi" 2
 # 2 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts" 2

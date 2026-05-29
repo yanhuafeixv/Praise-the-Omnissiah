@@ -1,35 +1,41 @@
 #include <stdio.h>
 #include <unistd.h>
-#include "pca9685_servo.h"   // 仅包含头文件
-#include "arm.h"
+#include "serial.h"
 
-int main() {
-    if (pca9685_init("/dev/i2c-1", 50.0) < 0) {
-        fprintf(stderr, "Init failed.\n");
+int main(void)
+{
+    /* 初始化 UART1（设备节点请用 dmesg | grep tty 确认） */
+    if (Serial_Init("/dev/ttyS1", 9600) != 0) {
+        fprintf(stderr, "Failed to init serial port!\n");
         return 1;
     }
 
-    while(1)
-    {
-        // pca9685_set_servo(3, 45);     //底盘旋转角度
-        // pca9685_set_servo(7, 135);     //底盘旋转角度
-        // pca9685_set_servo(0, 0);     //底盘旋转角度
-        // pca9685_set_servo(11, 180);     //底盘旋转角度
+    /* 启动接收线程 */
+    Serial_StartRx();
 
-        arm_move(-10,12,18);
-       // arm_stand();
+    /* 发送一条 AT 测试指令 */
+    Serial_SendString("AT\r\n");
+    sleep(1);
+
+    /* 主循环：等价于 STM32 中 while(1) 的使用方式 */
+    while (1) {
+        if (Serial_RxFlag) {
+            /* 收到一帧 [xxx] 格式的数据 */
+            printf("Received packet: %s\n", Serial_RxPacket);
+
+            /* 回显 */
+            Serial_Printf("[%s]\r\n", Serial_RxPacket);
+
+            /* 清除标志，准备接收下一帧 */
+            Serial_RxFlag = 0;
+        }
+
+        /* 可以在这里添加其他业务逻辑 */
+        usleep(10000);  /* 10ms，降低 CPU 占用 */
+        Serial_Printf("123\r\n");
+
     }
 
-    // for(int i=35;i<55;i++)
-    // {
-    //         pca9685_set_servo(3, i);
-    //         pca9685_set_servo(7, 180-i);
-    //         printf("angle: %d\n",i);
-            
-    //         sleep(1);
-
-    // }
-    pca9685_close();
+    Serial_Close();
     return 0;
 }
-//550    80

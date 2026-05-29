@@ -633,6 +633,30 @@ home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/a
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s
 
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o
+
+# target to build an object file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i
+
+# target to preprocess a source file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s
+
+# target to generate assembly for a file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
+
 home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o
 
@@ -704,6 +728,30 @@ home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/p
 home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o
+
+# target to build an object file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i
+
+# target to preprocess a source file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s
+
+# target to generate assembly for a file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -801,6 +849,9 @@ help:
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.s"
@@ -810,6 +861,9 @@ help:
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
