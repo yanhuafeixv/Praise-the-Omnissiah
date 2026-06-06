@@ -85,28 +85,28 @@
 
 
     // ----------姿态传感器---------- //
-    spi3 {
-        status = "okay";
-        compatible = "spi-gpio";
+   // spi3 {
+   //     status = "okay";
+   //     compatible = "spi-gpio";
+//
+    //    gpio-sck  = <&gpa1 6 GPIO_ACTIVE_HIGH>;     // GPIO22 
+    //    gpio-mosi = <&gpa1 7 GPIO_ACTIVE_HIGH>;     // GPIO23
+	//	gpio-miso = <&gpa1 8 GPIO_ACTIVE_HIGH>;     // GPIO24 
+	//	cs-gpios  = <&gpa1 9 GPIO_ACTIVE_HIGH>;     // GPIO25 
+//
+    //    #address-cells = <1>;
+	//	#size-cells = <0>;
+	//	num-chipselects = <1>;
+//
+     //   imu: imu@0 {
+     //       status = "okay";
+     //       gpio-controller;
+	//	    compatible = "seekfree,imu";    // 自动识别IMU660RA IMU660RB IMU963RA
+     //       spi-max-frequency = <10000000>;
+	//		reg = <0>;
+	//	};
 
-        gpio-sck  = <&gpa1 6 GPIO_ACTIVE_HIGH>;     // GPIO22 
-        gpio-mosi = <&gpa1 7 GPIO_ACTIVE_HIGH>;     // GPIO23
-		gpio-miso = <&gpa1 8 GPIO_ACTIVE_HIGH>;     // GPIO24 
-		cs-gpios  = <&gpa1 9 GPIO_ACTIVE_HIGH>;     // GPIO25 
-
-        #address-cells = <1>;
-		#size-cells = <0>;
-		num-chipselects = <1>;
-
-        imu: imu@0 {
-            status = "okay";
-            gpio-controller;
-		    compatible = "seekfree,imu";    // 自动识别IMU660RA IMU660RB IMU963RA
-            spi-max-frequency = <10000000>;
-			reg = <0>;
-		};
-
-	};
+	//};
     // ----------姿态传感器---------- //
 
     // ----------舵机PWM---------- //
@@ -145,21 +145,21 @@
 
 
 //----------自定义p88，p89-------//
-    zf_driver_gpio_myi2c_scl {
-        status = "okay";
-       compatible = "seekfree,gpio_out";
-       gpios = <&gpa5 8 GPIO_ACTIVE_HIGH>;
+//    zf_driver_gpio_myi2c_scl {
+//        status = "okay";
+//       compatible = "seekfree,gpio_out";
+//       gpios = <&gpa5 8 GPIO_ACTIVE_HIGH>;
+//
+//       drive-open-drain;
+//};
 
-       drive-open-drain;
-};
-
-    zf_driver_gpio_myi2c_sda {
-        status = "okay";
-        compatible = "seekfree,gpio_out";
-        gpios = <&gpa5 9 GPIO_ACTIVE_HIGH>;
-
-        drive-open-drain;
-    };
+//    zf_driver_gpio_myi2c_sda {
+//        status = "okay";
+//        compatible = "seekfree,gpio_out";
+//        gpios = <&gpa5 9 GPIO_ACTIVE_HIGH>;
+//
+//        drive-open-drain;
+//    };
     // ----------电调PWM---------- //
 
 
@@ -310,29 +310,29 @@
 // ----------带方向编码器配置---------- //
 // 编码器1
 // PWM0 GPIO64
-//&pwm0{
- //   status = "okay";
- //   pinctrl-names = "default";
- //   pinctrl-0 = <&pwm0_mux_m0>;
- //   clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
- //   compatible = "seekfree,encoder";
- //   encoder-dir-gpio = <&gpa3 3 GPIO_ACTIVE_HIGH>;  // GPIO051
- //   dev-name = "zf_encoder_1";
-//};
+&pwm0{
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pwm0_mux_m0>;
+    clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
+    compatible = "seekfree,encoder";
+    encoder-dir-gpio = <&gpa3 3 GPIO_ACTIVE_HIGH>;  // GPIO051
+    dev-name = "zf_encoder_1";
+};
 
 
 // 编码器2
 // PWM3 GPIO67
-//&pwm3{
-//    status = "okay";
- //   pinctrl-names = "default";
- //   pinctrl-0 = <&pwm3_mux_m0>;
- //   clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
- //   reg = <0 0x1611b030 0 0x10>;
- //   compatible = "seekfree,encoder";
- //   encoder-dir-gpio = <&gpa3 2 GPIO_ACTIVE_HIGH>;  // GPIO050
- //   dev-name = "zf_encoder_2";
-//};
+&pwm3{
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pwm3_mux_m0>;
+    clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
+    reg = <0 0x1611b030 0 0x10>;
+    compatible = "seekfree,encoder";
+    encoder-dir-gpio = <&gpa3 2 GPIO_ACTIVE_HIGH>;  // GPIO050
+    dev-name = "zf_encoder_2";
+};
 // ----------带方向编码器配置---------- //
 
 // ----------电机PWM配置---------- //
@@ -387,13 +387,13 @@
 // ----------ADC配置----------//
 
 
-&i2c1 {
-    status = "okay";
-    pinctrl-names = "default";
-    pinctrl-0 = <&i2c1_mux_m0>;          // 使用 GPIO50, GPIO51
-    clock-frequency = <100000>;
-    /* 不要定义任何子设备！ */
-};
+//&i2c1 {
+//    status = "okay";
+//    pinctrl-names = "default";
+//    pinctrl-0 = <&i2c1_mux_m0>;          // 使用 GPIO50, GPIO51
+//    clock-frequency = <100000>;
+//    /* 不要定义任何子设备！ */
+//};
 
 
 //&cpu_uart2 {
@@ -401,3 +401,18 @@
 //    pinctrl-names = "default";
 //    pinctrl-0 = <&uart2_2bit_m0>;    // 使用 GPIO42, GPIO43
 //};
+
+
+ 正交编码器 A/B 相引脚
+quad_encoder_a {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 6 GPIO_ACTIVE_HIGH>;   // GPIO22（示例）
+};
+
+quad_encoder_b {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 7 GPIO_ACTIVE_HIGH>;   // GPIO23（示例）
+};
+
