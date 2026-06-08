@@ -1418,44 +1418,7 @@
 
     };
 };
-
-
-
-
-
-&spi1{
-    status = "okay";
-    pinctrl-names = "default";
-    pinctrl-0 = <&spi1_4bit>;
-
-    st7789v:st7789v@0{
-        status = "okay";
-        compatible = "sitronix,st7789v";
-        reg = <0>;
-
-        spi-max-frequency =<50000000>;
-        spi-cpol;
-        spi-cpha;
-        rgb;
-        rotate = <0>;
-        buswidth = <8>;
-        fps = <30>;
-
-        dc-gpios = <&gpa1 10 0>;
-        reset-gpios = <&gpa4 10 0>;
-        backlight = <&st7789v_blk>;
-
-        width = <240>;
-        height= <320>;
-
-        debug = <0x0>;
-    };
-};
-
-
-
-
-
+# 283 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
 &pwm0{
     status = "okay";
     pinctrl-names = "default";
@@ -1530,27 +1493,27 @@
 &adc{
  status = "okay";
 };
-# 406 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
+# 376 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
  正交编码器 A/B 相引脚
 quad_encoder1_a {
     status = "okay";
     compatible = "seekfree,gpio_in";
-    gpios = <&gpa0 6 0>;
+    gpios = <&gpa3 12 0>;
 };
 
 quad_encoder1_b {
     status = "okay";
     compatible = "seekfree,gpio_in";
-    gpios = <&gpa0 7 0>;
+    gpios = <&gpa3 14 0>;
 };
 quad_encoder2_a {
     status = "okay";
     compatible = "seekfree,gpio_in";
-    gpios = <&gpa0 8 0>;
+    gpios = <&gpa4 10 0>;
 };
 
 quad_encoder2_b {
     status = "okay";
     compatible = "seekfree,gpio_in";
-    gpios = <&gpa0 9 0>;
+    gpios = <&gpa1 10 0>;
 };

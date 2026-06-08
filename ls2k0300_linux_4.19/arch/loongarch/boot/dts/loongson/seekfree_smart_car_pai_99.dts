@@ -274,37 +274,7 @@
 };
 
 
-// ----------IPS200屏幕---------- //
-// 目前只支持IPS200的SPI屏幕。
-// 不支持其他屏幕。
-&spi1{
-    status = "okay";
-    pinctrl-names = "default";
-    pinctrl-0 = <&spi1_4bit>;
 
-    st7789v:st7789v@0{
-        status = "okay";
-        compatible = "sitronix,st7789v";
-        reg = <0>;              //chip select 0:cs0  1:cs1
-
-        spi-max-frequency =<50000000>;
-        spi-cpol;
-        spi-cpha;
-        rgb;
-        rotate = <0>;           // 旋转方向 0 90 180 270
-        buswidth = <8>;
-        fps = <30>;             // 帧率
-        
-        dc-gpios = <&gpa1 10 GPIO_ACTIVE_HIGH>;     // GPIO26
-        reset-gpios = <&gpa4 10 GPIO_ACTIVE_HIGH>;  // GPIO74
-        backlight = <&st7789v_blk>;
-
-        width = <240>;     
-        height= <320>;      
-
-        debug = <0x0>;
-    };
-};
 // ----------IPS200屏幕---------- //
 
 // ----------带方向编码器配置---------- //
@@ -407,22 +377,22 @@
 quad_encoder1_a {
     status = "okay";
     compatible = "seekfree,gpio_in";
-    gpios = <&gpa0 6 GPIO_ACTIVE_HIGH>;   // GPIO22（示例）
+    gpios = <&gpa3 12 GPIO_ACTIVE_HIGH>;   // GPIO60（示例）
 };
 
 quad_encoder1_b {
     status = "okay";
     compatible = "seekfree,gpio_in";
-    gpios = <&gpa0 7 GPIO_ACTIVE_HIGH>;   // GPIO23（示例）
+    gpios = <&gpa3 14 GPIO_ACTIVE_HIGH>;   // GPIO62（示例）
 };
 quad_encoder2_a {
     status = "okay";
     compatible = "seekfree,gpio_in";
-    gpios = <&gpa0 8 GPIO_ACTIVE_HIGH>;   // GPIO22（示例）
+    gpios = <&gpa4 10 GPIO_ACTIVE_HIGH>;   // GPIO74（示例）
 };
 
 quad_encoder2_b {
     status = "okay";
     compatible = "seekfree,gpio_in";
-    gpios = <&gpa0 9 GPIO_ACTIVE_HIGH>;   // GPIO23（示例）
+    gpios = <&gpa1 10 GPIO_ACTIVE_HIGH>;   // GPIO26（示例）
 };

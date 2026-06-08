@@ -120,8 +120,8 @@ extern "C" {
 // ----------- 左编码器 -----------
 int encoder_left_init(void) {
     if (left_running) return -1;
-    left_fd_a = gpio_init(22);   // A
-    left_fd_b = gpio_init(23);   // B
+    left_fd_a = gpio_init(74);   // A
+    left_fd_b = gpio_init(26);   // B
     if (left_fd_a < 0 || left_fd_b < 0) return -1;
 
     static encoder_ctx left_ctx;
@@ -152,8 +152,8 @@ void encoder_left_deinit(void) {
 // ----------- 右编码器 -----------
 int encoder_right_init(void) {
     if (right_running) return -1;
-    right_fd_a = gpio_init(24);   // A
-    right_fd_b = gpio_init(25);   // B
+    right_fd_a = gpio_init(60);   // A
+    right_fd_b = gpio_init(62);   // B
     if (right_fd_a < 0 || right_fd_b < 0) return -1;
 
     static encoder_ctx right_ctx;

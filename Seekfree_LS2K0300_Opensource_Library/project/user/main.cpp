@@ -3,7 +3,7 @@
 #include "encoder.h"
 
 int main(int, char**) {
-    // 初始化左右编码器（GPIO 已在函数内指定）
+    //初始化左右编码器（GPIO 已在函数内指定）
     if (encoder_left_init() != 0) {
         printf("Left encoder init failed!\n");
         return -1;
