@@ -1310,35 +1310,7 @@
         compatible = "seekfree,gpio_out";
         gpios = <&gpa4 8 0>;
  };
-
-
-
-
-    spi3 {
-        status = "okay";
-        compatible = "spi-gpio";
-
-        gpio-sck = <&gpa1 6 0>;
-        gpio-mosi = <&gpa1 7 0>;
-     gpio-miso = <&gpa1 8 0>;
-  cs-gpios = <&gpa1 9 0>;
-
-        #address-cells = <1>;
-  #size-cells = <0>;
-  num-chipselects = <1>;
-
-        imu: imu@0 {
-            status = "okay";
-            gpio-controller;
-      compatible = "seekfree,imu";
-            spi-max-frequency = <10000000>;
-   reg = <0>;
-  };
-
- };
-
-
-
+# 113 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
     zf_device_pwm_servo{
         compatible = "seekfree,pwm";
         pwms = <&pwm_atim 5 1000000>;
@@ -1479,7 +1451,40 @@
         debug = <0x0>;
     };
 };
-# 342 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
+
+
+
+
+
+&pwm0{
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pwm0_mux_m0>;
+    clock-frequency = <100000000>;
+    compatible = "seekfree,encoder";
+    encoder-dir-gpio = <&gpa3 3 0>;
+    dev-name = "zf_encoder_1";
+};
+
+
+
+
+&pwm3{
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pwm3_mux_m0>;
+    clock-frequency = <100000000>;
+    reg = <0 0x1611b030 0 0x10>;
+    compatible = "seekfree,encoder";
+    encoder-dir-gpio = <&gpa3 2 0>;
+    dev-name = "zf_encoder_2";
+};
+
+
+
+
+
+
 &pwm1{
     status = "okay";
     pinctrl-names = "default";
@@ -1525,13 +1530,27 @@
 &adc{
  status = "okay";
 };
-# 431 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
-&pinctrl {
-    encoder_pins: encoder-pins {
-        loongson,pinmux = <&gpa3 3 3>,
-                          <&gpa4 0 0>,
-                          <&gpa3 2 2>,
-                          <&gpa4 3 3>;
-        loongson,pinmux-funcsel = <0>;
-    };
+# 406 "arch/loongarch/boot/dts/loongson/seekfree_smart_car_pai_99.dts"
+ 正交编码器 A/B 相引脚
+quad_encoder1_a {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 6 0>;
+};
+
+quad_encoder1_b {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 7 0>;
+};
+quad_encoder2_a {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 8 0>;
+};
+
+quad_encoder2_b {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 9 0>;
 };

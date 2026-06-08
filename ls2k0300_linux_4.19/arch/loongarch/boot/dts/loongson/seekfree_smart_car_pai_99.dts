@@ -85,28 +85,28 @@
 
 
     // ----------姿态传感器---------- //
-    spi3 {
-        status = "okay";
-        compatible = "spi-gpio";
+   // spi3 {
+   //     status = "okay";
+   //     compatible = "spi-gpio";
+//
+    //    gpio-sck  = <&gpa1 6 GPIO_ACTIVE_HIGH>;     // GPIO22 
+    //    gpio-mosi = <&gpa1 7 GPIO_ACTIVE_HIGH>;     // GPIO23
+	//	gpio-miso = <&gpa1 8 GPIO_ACTIVE_HIGH>;     // GPIO24 
+	//	cs-gpios  = <&gpa1 9 GPIO_ACTIVE_HIGH>;     // GPIO25 
+//
+    //    #address-cells = <1>;
+	//	#size-cells = <0>;
+	//	num-chipselects = <1>;
+//
+     //   imu: imu@0 {
+     //       status = "okay";
+     //       gpio-controller;
+	//	    compatible = "seekfree,imu";    // 自动识别IMU660RA IMU660RB IMU963RA
+     //       spi-max-frequency = <10000000>;
+	//		reg = <0>;
+	//	};
 
-        gpio-sck  = <&gpa1 6 GPIO_ACTIVE_HIGH>;     // GPIO22 
-        gpio-mosi = <&gpa1 7 GPIO_ACTIVE_HIGH>;     // GPIO23
-    	gpio-miso = <&gpa1 8 GPIO_ACTIVE_HIGH>;     // GPIO24 
-		cs-gpios  = <&gpa1 9 GPIO_ACTIVE_HIGH>;     // GPIO25 
-
-        #address-cells = <1>;
-		#size-cells = <0>;
-		num-chipselects = <1>;
-
-        imu: imu@0 {
-            status = "okay";
-            gpio-controller;
-		    compatible = "seekfree,imu";    // 自动识别IMU660RA IMU660RB IMU963RA
-            spi-max-frequency = <10000000>;
-			reg = <0>;
-		};
-
-	};
+	//};
     // ----------姿态传感器---------- //
 
     // ----------舵机PWM---------- //
@@ -310,29 +310,29 @@
 // ----------带方向编码器配置---------- //
 // 编码器1
 // PWM0 GPIO64
-//&pwm0{
-  //  status = "okay";
-    //pinctrl-names = "default";
-    //pinctrl-0 = <&pwm0_mux_m0>;
-   // clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
-   // compatible = "seekfree,encoder";
-   // encoder-dir-gpio = <&gpa3 3 GPIO_ACTIVE_HIGH>;  // GPIO051
-   // dev-name = "zf_encoder_1";
-//};
+&pwm0{
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pwm0_mux_m0>;
+    clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
+    compatible = "seekfree,encoder";
+    encoder-dir-gpio = <&gpa3 3 GPIO_ACTIVE_HIGH>;  // GPIO051
+    dev-name = "zf_encoder_1";
+};
 
 
 // 编码器2
 // PWM3 GPIO67
-//&pwm3{
-  //  status = "okay";
-  //  pinctrl-names = "default";
-   // pinctrl-0 = <&pwm3_mux_m0>;
-   // clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
-   // reg = <0 0x1611b030 0 0x10>;
-   // compatible = "seekfree,encoder";
-   // encoder-dir-gpio = <&gpa3 2 GPIO_ACTIVE_HIGH>;  // GPIO050
-   // dev-name = "zf_encoder_2";
-//};
+&pwm3{
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&pwm3_mux_m0>;
+    clock-frequency = <100000000>;                  // 10ns计数一次, 100MHZ的采样频率
+    reg = <0 0x1611b030 0 0x10>;
+    compatible = "seekfree,encoder";
+    encoder-dir-gpio = <&gpa3 2 GPIO_ACTIVE_HIGH>;  // GPIO050
+    dev-name = "zf_encoder_2";
+};
 // ----------带方向编码器配置---------- //
 
 // ----------电机PWM配置---------- //
@@ -403,37 +403,26 @@
 //};
 
 
-// 正交编码器 A/B 相引脚
-//quad_encoder1_a {
-//    status = "okay";
- //   compatible = "seekfree,gpio_in";
-//    gpios = <&gpa3 3 GPIO_ACTIVE_HIGH>;   // GPIO51（示例）
-//};
-//
-//quad_encoder1_b {
- //   status = "okay";
- //   compatible = "seekfree,gpio_in";
- //   gpios = <&gpa4 0 GPIO_ACTIVE_HIGH>;   // GPIO64（示例）
-//};
-//
-//quad_encoder2_a {
-//    status = "okay";
- //   compatible = "seekfree,gpio_in";
- //   gpios = <&gpa3 2 GPIO_ACTIVE_HIGH>;   // GPIO50（示例）
-//};
-//
-//quad_encoder2_b {
-//    status = "okay";
-//    compatible = "seekfree,gpio_in";
-//    gpios = <&gpa4 3 GPIO_ACTIVE_HIGH>;   // GPIO67（示例）
-//};
+ 正交编码器 A/B 相引脚
+quad_encoder1_a {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 6 GPIO_ACTIVE_HIGH>;   // GPIO22（示例）
+};
 
-&pinctrl {
-    encoder_pins: encoder-pins {
-        loongson,pinmux = <&gpa3 3 3>,    // GPIO51 (gpa3 3)
-                          <&gpa4 0 0>,    // GPIO64 (gpa4 0)
-                          <&gpa3 2 2>,    // GPIO50 (gpa3 2)
-                          <&gpa4 3 3>;    // GPIO67 (gpa4 3)
-        loongson,pinmux-funcsel = <PINCTL_FUNCTIONGPIO>;
-    };
+quad_encoder1_b {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 7 GPIO_ACTIVE_HIGH>;   // GPIO23（示例）
+};
+quad_encoder2_a {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 8 GPIO_ACTIVE_HIGH>;   // GPIO22（示例）
+};
+
+quad_encoder2_b {
+    status = "okay";
+    compatible = "seekfree,gpio_in";
+    gpios = <&gpa0 9 GPIO_ACTIVE_HIGH>;   // GPIO23（示例）
 };

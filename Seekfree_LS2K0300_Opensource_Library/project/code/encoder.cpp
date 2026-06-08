@@ -7,25 +7,24 @@
 #include <pthread.h>
 #include <atomic>
 
-// ① 包含自己的头文件，让 encoder_t 类型可见
-#include "encoder.h"
+// ===================== 左编码器 =====================
+static std::atomic<int> left_count{0};
+static int left_fd_a = -1, left_fd_b = -1;
+static pthread_t left_thread;
+static bool left_running = false;
 
-// ② C++ 原子类型
-struct encoder_s {
-    int gpio_a, gpio_b;
-    int fd_a, fd_b;
-    pthread_t thread;
-    bool thread_running;
-    int prev_a, prev_b;
-    std::atomic<int> count;
-};
+// ===================== 右编码器 =====================
+static std::atomic<int> right_count{0};
+static int right_fd_a = -1, right_fd_b = -1;
+static pthread_t right_thread;
+static bool right_running = false;
 
-// ---------- 内部辅助函数 ----------
+// ===================== 通用 GPIO 初始化 ==============
 static int gpio_init(int gpio) {
     char path[64];
     int fd;
 
-    // 导出 GPIO
+    // 导出
     fd = open("/sys/class/gpio/export", O_WRONLY);
     if (fd >= 0) {
         snprintf(path, sizeof(path), "%d", gpio);
@@ -40,107 +39,146 @@ static int gpio_init(int gpio) {
     write(fd, "in", 2);
     close(fd);
 
-    // 边沿：both
+    // 边沿
     snprintf(path, sizeof(path), "/sys/class/gpio/gpio%d/edge", gpio);
     fd = open(path, O_WRONLY);
     if (fd < 0) return -1;
     write(fd, "both", 4);
     close(fd);
 
-    // 打开 value 文件
+    // 打开 value
     snprintf(path, sizeof(path), "/sys/class/gpio/gpio%d/value", gpio);
     return open(path, O_RDONLY);
 }
 
+// ===================== 解码线程模板 ==================
+struct encoder_ctx {
+    int fd_a, fd_b;
+    std::atomic<int>* count;
+    bool* running;
+};
+
 static void* encoder_thread(void* arg) {
-    encoder_t* enc = (encoder_t*)arg;   // 现在 encoder_t 已知
+    encoder_ctx* ctx = (encoder_ctx*)arg;
     struct pollfd fds[2];
     char buf_a, buf_b;
     int level_a, level_b;
+    int prev_a = 0, prev_b = 0;
+    int local = 0;
 
-    while (enc->thread_running) {
-        fds[0].fd = enc->fd_a;
+    while (*(ctx->running)) {
+        fds[0].fd = ctx->fd_a;
         fds[0].events = POLLPRI | POLLERR;
-        fds[1].fd = enc->fd_b;
+        fds[1].fd = ctx->fd_b;
         fds[1].events = POLLPRI | POLLERR;
 
         int ret = poll(fds, 2, 100);
         if (ret < 0) break;
 
-        // 读取当前电平
-        lseek(enc->fd_a, 0, SEEK_SET);
-        if (read(enc->fd_a, &buf_a, 1) > 0)
+        // 读 A 相
+        lseek(ctx->fd_a, 0, SEEK_SET);
+        if (read(ctx->fd_a, &buf_a, 1) > 0)
             level_a = buf_a - '0';
         else continue;
 
-        lseek(enc->fd_b, 0, SEEK_SET);
-        if (read(enc->fd_b, &buf_b, 1) > 0)
+        // 读 B 相
+        lseek(ctx->fd_b, 0, SEEK_SET);
+        if (read(ctx->fd_b, &buf_b, 1) > 0)
             level_b = buf_b - '0';
         else continue;
 
-        // 4倍频正交解码状态机（与你之前的逻辑完全一致）
-        if (enc->prev_a != level_a || enc->prev_b != level_b) {
+        // 正交解码（4倍频）
+        if (prev_a != level_a || prev_b != level_b) {
             int inc = 0;
-            if (enc->prev_a == 0 && enc->prev_b == 0) {
+            if (prev_a == 0 && prev_b == 0) {
                 if (level_a == 1 && level_b == 0) inc = 1;
                 else if (level_a == 0 && level_b == 1) inc = -1;
-            } else if (enc->prev_a == 1 && enc->prev_b == 0) {
+            } else if (prev_a == 1 && prev_b == 0) {
                 if (level_a == 1 && level_b == 1) inc = 1;
                 else if (level_a == 0 && level_b == 0) inc = -1;
-            } else if (enc->prev_a == 1 && enc->prev_b == 1) {
+            } else if (prev_a == 1 && prev_b == 1) {
                 if (level_a == 0 && level_b == 1) inc = 1;
                 else if (level_a == 1 && level_b == 0) inc = -1;
-            } else if (enc->prev_a == 0 && enc->prev_b == 1) {
+            } else if (prev_a == 0 && prev_b == 1) {
                 if (level_a == 0 && level_b == 0) inc = 1;
                 else if (level_a == 1 && level_b == 1) inc = -1;
             }
-            enc->prev_a = level_a;
-            enc->prev_b = level_b;
-            if (inc) enc->count.fetch_add(inc, std::memory_order_relaxed);
+            prev_a = level_a;
+            prev_b = level_b;
+            if (inc) {
+                local += inc;
+                ctx->count->store(local, std::memory_order_relaxed);
+            }
         }
     }
     return nullptr;
 }
 
-// ---------- 对外接口 ----------
+// ===================== 对外接口 =====================
 extern "C" {
-    encoder_t* encoder_create(int gpio_a, int gpio_b) {
-        encoder_t* enc = (encoder_t*)calloc(1, sizeof(encoder_t));
-        if (!enc) return nullptr;
 
-        enc->gpio_a = gpio_a;
-        enc->gpio_b = gpio_b;
-        enc->fd_a = gpio_init(gpio_a);
-        enc->fd_b = gpio_init(gpio_b);
-        if (enc->fd_a < 0 || enc->fd_b < 0) {
-            close(enc->fd_a);
-            close(enc->fd_b);
-            free(enc);
-            return nullptr;
-        }
+// ----------- 左编码器 -----------
+int encoder_left_init(void) {
+    if (left_running) return -1;
+    left_fd_a = gpio_init(22);   // A
+    left_fd_b = gpio_init(23);   // B
+    if (left_fd_a < 0 || left_fd_b < 0) return -1;
 
-        enc->thread_running = true;
-        if (pthread_create(&enc->thread, nullptr, encoder_thread, enc) != 0) {
-            enc->thread_running = false;
-            close(enc->fd_a);
-            close(enc->fd_b);
-            free(enc);
-            return nullptr;
-        }
-        return enc;
+    static encoder_ctx left_ctx;
+    left_ctx.fd_a = left_fd_a;
+    left_ctx.fd_b = left_fd_b;
+    left_ctx.count = &left_count;
+    left_ctx.running = &left_running;
+
+    left_running = true;
+    if (pthread_create(&left_thread, nullptr, encoder_thread, &left_ctx) != 0) {
+        left_running = false;
+        return -1;
     }
+    return 0;
+}
 
-    int encoder_get_count(encoder_t* enc) {
-        if (!enc) return 0;
-        return enc->count.load(std::memory_order_relaxed);
-    }
+int encoder_left_get_count(void) {
+    return left_count.load(std::memory_order_relaxed);
+}
 
-    void encoder_destroy(encoder_t* enc) {
-        if (!enc) return;
-        enc->thread_running = false;
-        pthread_join(enc->thread, nullptr);
-        close(enc->fd_a);
-        close(enc->fd_b);
-        free(enc);
+void encoder_left_deinit(void) {
+    left_running = false;
+    if (left_thread) pthread_join(left_thread, nullptr);
+    close(left_fd_a);
+    close(left_fd_b);
+}
+
+// ----------- 右编码器 -----------
+int encoder_right_init(void) {
+    if (right_running) return -1;
+    right_fd_a = gpio_init(24);   // A
+    right_fd_b = gpio_init(25);   // B
+    if (right_fd_a < 0 || right_fd_b < 0) return -1;
+
+    static encoder_ctx right_ctx;
+    right_ctx.fd_a = right_fd_a;
+    right_ctx.fd_b = right_fd_b;
+    right_ctx.count = &right_count;
+    right_ctx.running = &right_running;
+
+    right_running = true;
+    if (pthread_create(&right_thread, nullptr, encoder_thread, &right_ctx) != 0) {
+        right_running = false;
+        return -1;
     }
+    return 0;
+}
+
+int encoder_right_get_count(void) {
+    return right_count.load(std::memory_order_relaxed);
+}
+
+void encoder_right_deinit(void) {
+    right_running = false;
+    if (right_thread) pthread_join(right_thread, nullptr);
+    close(right_fd_a);
+    close(right_fd_b);
+}
+
 }
