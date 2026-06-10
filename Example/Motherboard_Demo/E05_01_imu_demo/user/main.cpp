@@ -1,66 +1,263 @@
+/*********************************************************************************************************************
+* LS2K0300 Opensourec Library 即（LS2K0300 开源库）是一个基于官方 SDK 接口的第三方开源库
+* Copyright (c) 2022 SEEKFREE 逐飞科技
+*
+* 本文件是LS2K0300 开源库的一部分
+*
+* LS2K0300 开源库 是免费软件
+* 您可以根据自由软件基金会发布的 GPL（GNU General Public License，即 GNU通用公共许可证）的条款
+* 即 GPL 的第3版（即 GPL3.0）或（您选择的）任何后来的版本，重新发布和/或修改它
+*
+* 本开源库的发布是希望它能发挥作用，但并未对其作任何的保证
+* 甚至没有隐含的适销性或适合特定用途的保证
+* 更多细节请参见 GPL
+*
+* 您应该在收到本开源库的同时收到一份 GPL 的副本
+* 如果没有，请参阅<https://www.gnu.org/licenses/>
+*
+* 额外注明：
+* 本开源库使用 GPL3.0 开源许可证协议 以上许可申明为译文版本
+* 许可申明英文版在 libraries/doc 文件夹下的 GPL3_permission_statement.txt 文件中
+* 许可证副本在 libraries 文件夹下 即该文件夹下的 LICENSE 文件
+* 欢迎各位使用并传播本程序 但修改内容时必须保留逐飞科技的版权声明（即本声明）
+*
+* 文件名称          main
+* 公司名称          成都逐飞科技有限公司
+* 适用平台          LS2K0300
+* 店铺链接          https://seekfree.taobao.com/
+*
+* 修改记录
+* 日期              作者           备注
+* 2025-02-27        大W            first version
+* 2025-03-24        AI             增加卡尔曼滤波姿态解算
+********************************************************************************************************************/
+
+#include "zf_common_headfile.h"
+#include <cmath>
+#include <ctime>
+
+// *************************** 例程硬件连接说明 ***************************
+// ...（与原来相同，省略）...
+
 // **************************** 网络配置 ****************************
-#define SERVER_IP "192.168.23.117"   // 上位机 IP
-#define PORT      8060             // 端口号
+#define SERVER_IP "192.168.208.19"   // 上位机 IP
+#define PORT      8086               // 端口号
 // **************************************************************
 
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <sys/time.h>
-#include "zf_common_headfile.h"      // 逐飞库通用头文件
+#define M_PI 3.14159265358979323846
 
-// ---------------------------- 传感器标定 ----------------------------
-// 加速度计：±16g → 2048 LSB/g
-#define ACC_SCALE       (1.0f / 2048.0f)
-// 陀螺仪：±2000dps → 16.4 LSB/(°/s)
-#define GYRO_SCALE      (1.0f / 16.4f)
-// 磁力计 QMC5883L，假设 ±8G 量程 → 3000 LSB/G
-#define MAG_SCALE       (1.0f / 3000.0f)
+// 卡尔曼滤波器类（一维，用于 Roll / Pitch / Yaw 独立滤波）
+class KalmanFilter {
+public:
+    float Q_angle;      // 过程噪声（角度）
+    float Q_bias;       // 过程噪声（陀螺仪零偏）
+    float R_measure;    // 测量噪声（加速度计/磁力计）
+    float angle;        // 当前角度估计值
+    float bias;         // 当前陀螺仪零偏估计值
+    float P[2][2];      // 误差协方差矩阵
 
-#define RAD2DEG         (57.2957795f)
+    KalmanFilter(float q_angle = 0.001f, float q_bias = 0.003f, float r_measure = 0.03f) {
+        Q_angle = q_angle;
+        Q_bias = q_bias;
+        R_measure = r_measure;
+        angle = 0.0f;
+        bias = 0.0f;
+        P[0][0] = 0.0f; P[0][1] = 0.0f;
+        P[1][0] = 0.0f; P[1][1] = 0.0f;
+    }
 
-// ---------------------------- 互补滤波参数 ----------------------------
-// 加速度/磁力计对姿态的修正权重（0~1，越大越相信观测，越小越平滑但响应慢）
-#define ACC_WEIGHT      0.02f   // roll/pitch 修正权重
-#define MAG_WEIGHT      0.02f   // yaw 修正权重
+    // 更新滤波器
+    // gyro_rate: 陀螺仪角速度（rad/s）
+    // acc_angle: 加速度计或磁力计计算的角度（rad）
+    // dt: 时间间隔（秒）
+    float update(float gyro_rate, float acc_angle, float dt) {
+        float gyro_rate_unbias = gyro_rate - bias;
+        // 状态预测
+        angle += gyro_rate_unbias * dt;
+        // 协方差预测
+        P[0][0] += dt * (dt * P[1][1] - P[0][1] - P[1][0] + Q_angle);
+        P[0][1] -= dt * P[1][1];
+        P[1][0] -= dt * P[1][1];
+        P[1][1] += Q_bias * dt;
 
-// ---------------------------- 低通滤波系数 ----------------------------
-#define LPF_ALPHA_ACC   0.1f    // 加速度低通
-#define LPF_ALPHA_MAG   0.1f    // 磁力计低通
+        // 卡尔曼增益
+        float S = P[0][0] + R_measure;
+        float K[2];
+        K[0] = P[0][0] / S;
+        K[1] = P[1][0] / S;
 
-// ---------------------------- 校准采样数 ----------------------------
-#define GYRO_BIAS_SAMPLES  200
-#define MAG_BIAS_SAMPLES   200
+        // 测量残差
+        float y = acc_angle - angle;
 
-// ---------------------------- 全局变量 ----------------------------
+        // 状态更新
+        angle += K[0] * y;
+        bias += K[1] * y;
+
+        // 协方差更新
+        float P00_temp = P[0][0];
+        float P01_temp = P[0][1];
+        P[0][0] -= K[0] * P00_temp;
+        P[0][1] -= K[0] * P01_temp;
+        P[1][0] -= K[1] * P00_temp;
+        P[1][1] -= K[1] * P01_temp;
+
+        return angle;
+    }
+
+    void setAngle(float a) { angle = a; }
+};
+
+// 全局变量
 timer_fd *pit_timer;
 char send_buf[256];
 
-// 当前姿态角（度）
-float roll  = 0.0f;
-float pitch = 0.0f;
-float yaw   = 0.0f;
+// 物理单位转换后的数据（单位：m/s², rad/s, Gauss）
+float acc_x_g, acc_y_g, acc_z_g;
+float gyro_x_rad, gyro_y_rad, gyro_z_rad;
+float mag_x_gauss, mag_y_gauss, mag_z_gauss;
 
-// 低通滤波状态
-float acc_lpf[3] = {0.0f};
-float mag_lpf[3] = {0.0f};
+// 姿态角（弧度）
+float roll_rad = 0.0f, pitch_rad = 0.0f, yaw_rad = 0.0f;
+// 卡尔曼滤波器实例
+KalmanFilter kf_roll    (0.05f, 0.003f, 0.1f);
+KalmanFilter kf_pitch   (0.05f, 0.003f, 0.1f);
+KalmanFilter kf_yaw     (0.01f, 0.0001f, 0.1f);   // Yaw 单独调参
 
-// 零偏
-float gyro_bias[3] = {0.0f};
-float mag_bias[3]  = {0.0f};
+// 时间记录
+struct timespec last_time;
+bool first_time = true;
 
-// ---------------------------- 函数声明 ----------------------------
-void pit_callback(void);
-void ComplementaryFilterEuler(float gx, float gy, float gz,   // rad/s
-                              float ax, float ay, float az,   // g
-                              float mx, float my, float mz,   // 高斯
-                              float dt);
-void calibrate_gyro_bias(void);
-void calibrate_mag_bias(void);
+// 根据不同 IMU 型号定义物理量程转换系数
+// 加速度：原始值 -> g（重力加速度）
+// 陀螺仪：原始值 -> rad/s
+// 磁力计：原始值 -> Gauss
+void get_scale_factors(float &acc_scale, float &gyro_scale, float &mag_scale) {
+    switch(imu_type) {
+        case DEV_IMU660RA:
+            // BMI088 典型值：加速度 ±24g -> 2048 LSB/g? 这里简化：假设原始值为16位有符号，±16g时 2048 LSB/g
+            // 实际逐飞库可能已做了转换？为可靠，请根据实际传感器手册调整
+            acc_scale = 1.0f / 2048.0f;   // 示例值，实际需要校准
+            gyro_scale = (3.1415926f / 180.0f) / 16.4f; // deg/s -> rad/s，BMI088 2000dps -> 16.4 LSB/deg/s
+            mag_scale = 1.0f;
+            break;
+        case DEV_IMU660RB:
+            acc_scale = 1.0f / 2048.0f;
+            gyro_scale = (3.1415926f / 180.0f) / 16.4f;
+            mag_scale = 1.0f;
+            break;
+        case DEV_IMU963RA:
+            // ICM42688P + AK09918 示例值，实际需根据数据手册调整
+            acc_scale = 1.0f / 4098.0f;   // ±16g
+            gyro_scale = (M_PI / 180.0f) / 14.29f; // 2000dps
+            mag_scale = 0.15f;             // AK09918: 1 LSB = 0.15 uT? 实际需确认
+            break;
+        default:
+            acc_scale = 1.0f; gyro_scale = 1.0f; mag_scale = 1.0f;
+            break;
+    }
+}
 
-// ---------------------------- 定时器回调（不变） ----------------------------
+// 从原始 int 值转换为物理值
+void convert_to_physical() {
+    float acc_scale, gyro_scale, mag_scale;
+    get_scale_factors(acc_scale, gyro_scale, mag_scale);
+
+    // 加速度：原始值 * 比例 -> g，再 * 9.8 得 m/s²（此处保留 g 以便计算角度）
+    acc_x_g = (float)imu_acc_x * acc_scale;
+    acc_y_g = (float)imu_acc_y * acc_scale;
+    acc_z_g = (float)imu_acc_z * acc_scale;
+
+    // 陀螺仪：原始值 * 比例 -> rad/s
+    gyro_x_rad = (float)imu_gyro_x * gyro_scale;
+    gyro_y_rad = (float)imu_gyro_y * gyro_scale;
+    gyro_z_rad = (float)imu_gyro_z * gyro_scale;
+
+    // 磁力计（仅 963RA）
+    if(imu_type == DEV_IMU963RA) {
+        mag_x_gauss = (float)imu_mag_x * mag_scale;
+        mag_y_gauss = (float)imu_mag_y * mag_scale;
+        mag_z_gauss = (float)imu_mag_z * mag_scale;
+    }
+}
+
+// 用加速度计计算 Roll 和 Pitch（弧度）
+// 公式：roll = atan2(acc_y, acc_z)
+//       pitch = atan2(-acc_x, sqrt(acc_y^2 + acc_z^2))
+void compute_acc_angles(float &roll_acc, float &pitch_acc) {
+    roll_acc = atan2f(acc_y_g, acc_z_g);
+    pitch_acc = atan2f(-acc_x_g, sqrtf(acc_y_g * acc_y_g + acc_z_g * acc_z_g));
+}
+
+// 用磁力计计算 Yaw（弧度），需要已知 Roll 和 Pitch 进行倾斜补偿
+void compute_mag_yaw(float roll, float pitch, float &yaw_mag) {
+    if(imu_type != DEV_IMU963RA) return;
+    // 倾斜补偿：将磁力计读数从机体坐标系旋转到水平坐标系
+    float bx = mag_x_gauss * cosf(pitch) + mag_y_gauss * sinf(pitch) * sinf(roll) + mag_z_gauss * sinf(pitch) * cosf(roll);
+    float by = mag_y_gauss * cosf(roll) - mag_z_gauss * sinf(roll);
+    yaw_mag = atan2f(by, bx);
+}
+
+// 陀螺仪零偏校准：静止 1 秒，累加求平均
+void calibrate_gyro_bias(int samples = 200) {
+    printf("Calibrating gyro bias, keep IMU still...\n");
+    float sum_x = 0, sum_y = 0, sum_z = 0;
+    for(int i = 0; i < samples; i++) {
+        imu_gyro_x = imu_get_raw(imu_file_path[GYRO_X_RAW]);
+        imu_gyro_y = imu_get_raw(imu_file_path[GYRO_Y_RAW]);
+        imu_gyro_z = imu_get_raw(imu_file_path[GYRO_Z_RAW]);
+        sum_x += (float)imu_gyro_x;
+        sum_y += (float)imu_gyro_y;
+        sum_z += (float)imu_gyro_z;
+        system_delay_ms(5);
+    }
+    float gyro_scale;
+    float dummy;
+    get_scale_factors(dummy, gyro_scale, dummy);
+    // 将累计的原始零偏转换为 rad/s 并存储在滤波器的 bias 中（注意卡尔曼滤波器的 bias 也是 rad/s）
+    // 此处直接设置卡尔曼滤波器的 bias，因为启动时无运动，认为 bias = 平均角速度
+    float bias_x_rad = (sum_x / samples) * gyro_scale;
+    float bias_y_rad = (sum_y / samples) * gyro_scale;
+    float bias_z_rad = (sum_z / samples) * gyro_scale;
+    kf_roll.bias = bias_x_rad;   // roll 对应 gyro_x
+    kf_pitch.bias = bias_y_rad;  // pitch 对应 gyro_y
+    kf_yaw.bias = bias_z_rad;    // yaw 对应 gyro_z
+    printf("Gyro bias (rad/s): x=%.4f, y=%.4f, z=%.4f\n", bias_x_rad, bias_y_rad, bias_z_rad);
+}
+
+// 姿态解算主函数（在定时器回调中调用）
+void update_attitude(float dt) {
+    // 1. 原始值转换为物理单位
+    convert_to_physical();
+
+    // 2. 由加速度计计算 Roll, Pitch（含线性加速度噪声，但卡尔曼会处理）
+    float roll_acc, pitch_acc;
+    compute_acc_angles(roll_acc, pitch_acc);
+
+    // 3. 卡尔曼滤波融合（Roll, Pitch）
+    roll_rad = kf_roll.update(gyro_x_rad, roll_acc, dt);
+    pitch_rad = kf_pitch.update(gyro_y_rad, pitch_acc, dt);
+
+    // 4. Yaw 处理
+    /*if(imu_type == DEV_IMU963RA) {
+        // 有磁力计：先获得磁力计航向角（需要倾斜补偿），再与陀螺仪积分融合
+        float yaw_mag;
+        compute_mag_yaw(roll_rad, pitch_rad, yaw_mag);
+        yaw_rad = kf_yaw.update(gyro_z_rad, yaw_mag, dt);
+    } else {
+        // 无磁力计：只对陀螺仪积分，不修正（没有测量值）
+        // 此处仍调用 update，但将 acc_angle 参数设为当前 yaw（相当于无修正，只积分）*/
+        yaw_rad = kf_yaw.update(gyro_z_rad, yaw_rad, dt);
+    //}
+
+    // 将角度限制到 [-pi, pi]
+    if(yaw_rad > M_PI) yaw_rad -= 2.0f * M_PI;
+    if(yaw_rad < -M_PI) yaw_rad += 2.0f * M_PI;
+}
+
+// 定时器回调：读取 IMU 原始数据并进行姿态解算
 void pit_callback()
 {
+    // 读取原始数据
     if(DEV_IMU660RA == imu_type || DEV_IMU660RB == imu_type)
     {
         imu_acc_x = imu_get_raw(imu_file_path[ACC_X_RAW]);
@@ -82,81 +279,23 @@ void pit_callback()
         imu_mag_y = imu_get_raw(imu_file_path[MAG_Y_RAW]);
         imu_mag_z = imu_get_raw(imu_file_path[MAG_Z_RAW]);
     }
-}
 
-// ---------------------------- 陀螺零偏校准 ----------------------------
-void calibrate_gyro_bias(void)
-{
-    printf("Calibrating gyro bias... keep the IMU static!\n");
-    float sum_x = 0, sum_y = 0, sum_z = 0;
-    for (int i = 0; i < GYRO_BIAS_SAMPLES; i++)
-    {
-        system_delay_ms(10);
-        sum_x += imu_gyro_x;
-        sum_y += imu_gyro_y;
-        sum_z += imu_gyro_z;
+    // 计算时间差 dt
+    struct timespec now;
+    clock_gettime(CLOCK_MONOTONIC, &now);
+    float dt = 0.01f; // 默认值
+    if(!first_time) {
+        dt = (now.tv_sec - last_time.tv_sec) + (now.tv_nsec - last_time.tv_nsec) * 1e-9f;
+        if(dt < 0.001f) dt = 0.001f;   // 防止过小
+        if(dt > 0.05f) dt = 0.05f;     // 限幅
     }
-    gyro_bias[0] = sum_x / GYRO_BIAS_SAMPLES;
-    gyro_bias[1] = sum_y / GYRO_BIAS_SAMPLES;
-    gyro_bias[2] = sum_z / GYRO_BIAS_SAMPLES;
-    printf("Gyro bias: %.1f, %.1f, %.1f\n", gyro_bias[0], gyro_bias[1], gyro_bias[2]);
+    last_time = now;
+    first_time = false;
+
+    // 姿态解算
+    update_attitude(dt);
 }
 
-// ---------------------------- 磁力计硬铁零偏校准 ----------------------------
-void calibrate_mag_bias(void)
-{
-    printf("Calibrating magnetometer bias... keep IMU static and away from magnets!\n");
-    float sum_x = 0, sum_y = 0, sum_z = 0;
-    for (int i = 0; i < MAG_BIAS_SAMPLES; i++)
-    {
-        system_delay_ms(10);
-        sum_x += imu_mag_x;
-        sum_y += imu_mag_y;
-        sum_z += imu_mag_z;
-    }
-    mag_bias[0] = sum_x / MAG_BIAS_SAMPLES;
-    mag_bias[1] = sum_y / MAG_BIAS_SAMPLES;
-    mag_bias[2] = sum_z / MAG_BIAS_SAMPLES;
-    printf("Mag bias: %.1f, %.1f, %.1f\n", mag_bias[0], mag_bias[1], mag_bias[2]);
-}
-
-// ---------------------------- 欧拉角互补滤波（核心） ----------------------------
-void ComplementaryFilterEuler(float gx, float gy, float gz,
-                              float ax, float ay, float az,
-                              float mx, float my, float mz,
-                              float dt)
-{
-    // 1. 加速度计计算 roll 和 pitch（度）
-    float acc_roll  = atan2f(ay, sqrtf(ax*ax + az*az)) * RAD2DEG;   // 绕 X 轴
-    float acc_pitch = atan2f(-ax, sqrtf(ay*ay + az*az)) * RAD2DEG; // 绕 Y 轴（注意公式可能因安装方向不同需微调）
-
-    // 2. 磁力计计算 yaw（倾斜补偿后）
-    float cp = cosf(pitch * (M_PI / 180.0f));
-    float sp = sinf(pitch * (M_PI / 180.0f));
-    float cr = cosf(roll  * (M_PI / 180.0f));
-    float sr = sinf(roll  * (M_PI / 180.0f));
-
-    // 将磁力计数据旋转到水平面
-    float mag_x = mx * cp + my * sp * sr + mz * sp * cr;
-    float mag_y = my * cr - mz * sr;
-    float yaw_mag = atan2f(-mag_y, mag_x) * RAD2DEG;  // 地磁北
-
-    // 3. 陀螺仪积分（欧拉角直接累加，忽略旋转顺序误差）
-    roll  += gx * dt * RAD2DEG;   // gx 绕 X 轴，影响 roll
-    pitch += gy * dt * RAD2DEG;   // gy 绕 Y 轴，影响 pitch
-    yaw   += gz * dt * RAD2DEG;   // gz 绕 Z 轴，影响 yaw（近似）
-
-    // 4. 一阶互补滤波：用观测值修正积分结果
-    roll  = roll  + ACC_WEIGHT * (acc_roll  - roll);
-    pitch = pitch + ACC_WEIGHT * (acc_pitch - pitch);
-    yaw   = yaw   + MAG_WEIGHT * (yaw_mag   - yaw);
-
-    // 限制 yaw 在 0~360 度（可选）
-    if (yaw < 0.0f)   yaw += 360.0f;
-    if (yaw > 360.0f) yaw -= 360.0f;
-}
-
-// ---------------------------- 主函数 ----------------------------
 int main(int, char**)
 {
     // 1. 识别 IMU 型号
@@ -166,7 +305,7 @@ int main(int, char**)
     else if(DEV_IMU963RA == imu_type) printf("IMU DEV IS IMU963RA\r\n");
     else { printf("NO FIND IMU DEV\r\n"); return -1; }
 
-    // 2. 初始化 TCP
+    // 2. 初始化 TCP 客户端（必须在上位机打开 TCP 服务器后再运行）
     if(tcp_client_init(SERVER_IP, PORT) == 0)
         printf("tcp_client ok\r\n");
     else {
@@ -174,71 +313,60 @@ int main(int, char**)
         return -1;
     }
 
-    // 3. 注册逐飞助手
+    // 3. 注册逐飞助手接口（可选，保留原功能）
     seekfree_assistant_interface_init(tcp_client_send_data, tcp_client_read_data);
 
-    // 4. 启动 10ms 定时器更新传感器数据
+    // 4. 陀螺仪零偏校准（静止1秒）
+    calibrate_gyro_bias(200);
+
+    // 5. 获取初始姿态（静止时用加速度计初始角度）
+    // 先读一次数据以更新全局变量
+    if(DEV_IMU660RA == imu_type || DEV_IMU660RB == imu_type) {
+        imu_acc_x = imu_get_raw(imu_file_path[ACC_X_RAW]);
+        imu_acc_y = imu_get_raw(imu_file_path[ACC_Y_RAW]);
+        imu_acc_z = imu_get_raw(imu_file_path[ACC_Z_RAW]);
+    } else if(DEV_IMU963RA == imu_type) {
+        imu_acc_x = imu_get_raw(imu_file_path[ACC_X_RAW]);
+        imu_acc_y = imu_get_raw(imu_file_path[ACC_Y_RAW]);
+        imu_acc_z = imu_get_raw(imu_file_path[ACC_Z_RAW]);
+        imu_mag_x = imu_get_raw(imu_file_path[MAG_X_RAW]);
+        imu_mag_y = imu_get_raw(imu_file_path[MAG_Y_RAW]);
+        imu_mag_z = imu_get_raw(imu_file_path[MAG_Z_RAW]);
+    }
+    convert_to_physical();
+    float init_roll, init_pitch;
+    compute_acc_angles(init_roll, init_pitch);
+    kf_roll.setAngle(init_roll);
+    kf_pitch.setAngle(init_pitch);
+    if(imu_type == DEV_IMU963RA) {
+        float init_yaw;
+        compute_mag_yaw(init_roll, init_pitch, init_yaw);
+        kf_yaw.setAngle(/*init_yaw*/0.0f); // 初始航向角不确定，先设为0，后续由磁力计修正
+    } else {
+        kf_yaw.setAngle(0.0f);
+    }
+
+    // 6. 启动定时器（10ms 更新一次 IMU 数据并解算）
     pit_timer = new timer_fd(10, pit_callback);
     pit_timer->start();
 
-    // 5. 传感器零偏校准（保持静止）
-    calibrate_gyro_bias();
-    calibrate_mag_bias();
-
-    // 6. 时间计量初始化
-    struct timeval tv_prev, tv_now;
-    gettimeofday(&tv_prev, NULL);
-    printf("Start Euler complementary filter...\n");
-
-    // 7. 主循环
+    // 7. 主循环：每 20ms 发送一次姿态角（度）
     while(1)
     {
-        // 计算真实时间间隔 dt
-        gettimeofday(&tv_now, NULL);
-        float dt = (tv_now.tv_sec - tv_prev.tv_sec) + 
-                   (tv_now.tv_usec - tv_prev.tv_usec) * 1e-6f;
-        tv_prev = tv_now;
-        if (dt > 0.05f) dt = 0.02f;   // 防止异常大间隔
-        if (dt <= 0.0f) dt = 0.02f;
+        // 将弧度转换为度数
+        float roll_deg = roll_rad * 180.0f / M_PI;
+        float pitch_deg = pitch_rad * 180.0f / M_PI;
+        float yaw_deg = yaw_rad * 180.0f / M_PI;
 
-        // 转换为物理单位，并减去零偏
-        float gx = (imu_gyro_x - gyro_bias[0]) * GYRO_SCALE * (M_PI / 180.0f);  // rad/s
-        float gy = (imu_gyro_y - gyro_bias[1]) * GYRO_SCALE * (M_PI / 180.0f);
-        float gz = (imu_gyro_z - gyro_bias[2]) * GYRO_SCALE * (M_PI / 180.0f);
-
-        float ax = imu_acc_x * ACC_SCALE;
-        float ay = imu_acc_y * ACC_SCALE;
-        float az = imu_acc_z * ACC_SCALE;
-
-        float mx = (imu_mag_x - mag_bias[0]) * MAG_SCALE;
-        float my = (imu_mag_y - mag_bias[1]) * MAG_SCALE;
-        float mz = (imu_mag_z - mag_bias[2]) * MAG_SCALE;
-
-        // 低通滤波
-        acc_lpf[0] += LPF_ALPHA_ACC * (ax - acc_lpf[0]);
-        acc_lpf[1] += LPF_ALPHA_ACC * (ay - acc_lpf[1]);
-        acc_lpf[2] += LPF_ALPHA_ACC * (az - acc_lpf[2]);
-
-        mag_lpf[0] += LPF_ALPHA_MAG * (mx - mag_lpf[0]);
-        mag_lpf[1] += LPF_ALPHA_MAG * (my - mag_lpf[1]);
-        mag_lpf[2] += LPF_ALPHA_MAG * (mz - mag_lpf[2]);
-
-        // 欧拉角互补滤波
-        ComplementaryFilterEuler(gx, gy, gz,
-                                 acc_lpf[0], acc_lpf[1], acc_lpf[2],
-                                 mag_lpf[0], mag_lpf[1], mag_lpf[2], dt);
-
-        // 发送数据（12 通道）
         snprintf(send_buf, sizeof(send_buf),
-                 "imu:%d,%d,%d,%d,%d,%d,%d,%d,%d,%.2f,%.2f,%.2f\n",
-                 imu_acc_x, imu_acc_y, imu_acc_z,
-                 imu_gyro_x, imu_gyro_y, imu_gyro_z,
-                 imu_mag_x, imu_mag_y, imu_mag_z,
-                 roll, pitch, yaw);
+               "%.2f,%.2f,%.2f\n",
+                (float)pitch_deg, (float)roll_deg, (float)yaw_deg);
 
         tcp_client_send_data((uint8_t*)send_buf, strlen(send_buf));
 
-        system_delay_ms(18);   // 维持约 50Hz
+
+        printf("Roll: %.2f, Pitch: %.2f, Yaw: %.2f\n", roll_deg, pitch_deg, yaw_deg);
+        system_delay_ms(200);   // 发送间隔
     }
 
     return 0;

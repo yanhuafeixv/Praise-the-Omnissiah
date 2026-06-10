@@ -1,0 +1,121 @@
+#include <math.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include "encoder.h"
+// ==================== 用户需根据实际硬件修改的常量 ====================
+#define ENCODER_PULSES_PER_REV   409.0f   // 编码器每转脉冲数（4倍频后）
+#define WHEEL_CIRCUMFERENCE      0.21834f    // 车轮周长，单位：米
+// 说明：以上两个参数用于将脉冲数转换为实际行驶距离
+
+// ==================== 里程计数据结构 ====================
+typedef struct {
+    float x;             // 当前位置 X 坐标（米）
+    float y;             // 当前位置 Y 坐标（米）
+    float yaw;           // 当前航向角（弧度），范围一般 [-π, π]
+    
+    // 内部变量，用于存储上一周期编码器读数
+    uint32_t last_left;  
+    uint32_t last_right;
+    bool init_flag;      // 是否已初始化
+} Odometry_t;
+
+// 全局里程计实例
+static Odometry_t odom;
+
+// ==================== 外部函数声明 ====================
+// 这两个函数由底层传感器驱动提供
+extern void get_angle(float *pitch, float *yaw, float *roll);
+
+
+ void get_encoder(uint32_t *left_num, uint32_t *right_num){
+
+    *left_num=encoder_left_get_count();
+    *right_num=encoder_right_get_count();
+}
+
+// ==================== 函数实现 ====================
+
+/**
+ * @brief 初始化里程计
+ * @param init_x 初始 X 坐标（通常为 0）
+ * @param init_y 初始 Y 坐标（通常为 0）
+ */
+void odometry_init(float init_x, float init_y)
+{
+    odom.x = init_x;
+    odom.y = init_y;
+    odom.yaw = 0.0f;
+    odom.init_flag = false;  // 标记尚未读取过编码器初始值
+    
+    // 读取一次初始编码器值（防止第一次更新时出现巨大增量）
+    uint32_t dummy_left, dummy_right;
+    get_encoder(&dummy_left, &dummy_right);
+    odom.last_left = dummy_left;
+    odom.last_right = dummy_right;
+}
+
+/**
+ * @brief 更新里程计（需周期性调用，例如每 10ms）
+ * 
+ * 核心步骤：
+ * 1. 读取当前陀螺仪航向和编码器计数值
+ * 2. 计算编码器增量并转换为行驶距离
+ * 3. 结合航向角更新全局坐标
+ */
+void odometry_update(void)
+{
+    // ---------- 第1步：采集传感器数据 ----------
+    float pitch, yaw_deg, roll;    // get_angle 返回的可能是度，我们统一转为弧度
+    uint32_t cur_left, cur_right;
+    
+    get_angle(&pitch, &yaw_deg, &roll);   // 注意：yaw_deg 假设为度
+    get_encoder(&cur_left, &cur_right);
+    
+    // 将角度从度转为弧度
+    float yaw_rad = yaw_deg * (M_PI / 180.0f);
+    odom.yaw = yaw_rad;   // 更新当前航向
+    
+    // ---------- 第2步：处理编码器溢出并计算脉冲增量 ----------
+    uint32_t delta_left, delta_right;
+    
+    // 因为编码器计数是 uint32_t，相减会自动处理溢出（如 0xFFFFFFFF -> 0x00000000）
+    // 但需保证两次采样间隔内增量不会超过 2^32 / 2，对小车来说不可能超过
+    delta_left  = cur_left  - odom.last_left;
+    delta_right = cur_right - odom.last_right;
+    
+    // 保存本次读数以备下次使用
+    odom.last_left  = cur_left;
+    odom.last_right = cur_right;
+    
+    // ---------- 第3步：将脉冲增量转换为轮子移动距离（米） ----------
+    float dist_per_pulse = WHEEL_CIRCUMFERENCE / ENCODER_PULSES_PER_REV;
+    float dist_left  = (float)delta_left  * dist_per_pulse;
+    float dist_right = (float)delta_right * dist_per_pulse;
+    
+    // ---------- 第4步：计算小车中心前进的弧长 ----------
+    float distance = (dist_left + dist_right) / 2.0f;
+    
+    // ---------- 第5步：根据航向角分解为 X、Y 方向位移 ----------
+    // 坐标系设定：
+    //   X 轴指向小车初始前进方向（yaw = 0 时车头朝向 X 轴正半轴）
+    //   Y 轴指向小车左侧（左转时 yaw 增大，Y 坐标增大）
+    float dx = distance * cosf(yaw_rad);
+    float dy = distance * sinf(yaw_rad);
+    
+    // ---------- 第6步：累加更新全局坐标 ----------
+    odom.x += dx;
+    odom.y += dy;
+}
+
+/**
+ * @brief 获取当前里程计信息
+ * @param x     输出参数：X 坐标（米）
+ * @param y     输出参数：Y 坐标（米）
+ * @param yaw   输出参数：航向角（弧度）
+ */
+void get_odometry(float *x, float *y, float *yaw)
+{
+    *x   = odom.x;
+    *y   = odom.y;
+    *yaw = odom.yaw;
+}

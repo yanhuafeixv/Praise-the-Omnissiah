@@ -85,28 +85,28 @@
 
 
     // ----------姿态传感器---------- //
-   // spi3 {
-   //     status = "okay";
-   //     compatible = "spi-gpio";
-//
-    //    gpio-sck  = <&gpa1 6 GPIO_ACTIVE_HIGH>;     // GPIO22 
-    //    gpio-mosi = <&gpa1 7 GPIO_ACTIVE_HIGH>;     // GPIO23
-	//	gpio-miso = <&gpa1 8 GPIO_ACTIVE_HIGH>;     // GPIO24 
-	//	cs-gpios  = <&gpa1 9 GPIO_ACTIVE_HIGH>;     // GPIO25 
-//
-    //    #address-cells = <1>;
-	//	#size-cells = <0>;
-	//	num-chipselects = <1>;
-//
-     //   imu: imu@0 {
-     //       status = "okay";
-     //       gpio-controller;
-	//	    compatible = "seekfree,imu";    // 自动识别IMU660RA IMU660RB IMU963RA
-     //       spi-max-frequency = <10000000>;
-	//		reg = <0>;
-	//	};
+    spi3 {
+        status = "okay";
+        compatible = "spi-gpio";
 
-	//};
+        gpio-sck  = <&gpa1 6 GPIO_ACTIVE_HIGH>;     // GPIO22 
+        gpio-mosi = <&gpa1 7 GPIO_ACTIVE_HIGH>;     // GPIO23
+		gpio-miso = <&gpa1 8 GPIO_ACTIVE_HIGH>;     // GPIO24 
+		cs-gpios  = <&gpa1 9 GPIO_ACTIVE_HIGH>;     // GPIO25 
+
+        #address-cells = <1>;
+		#size-cells = <0>;
+		num-chipselects = <1>;
+
+        imu: imu@0 {
+            status = "okay";
+            gpio-controller;
+		    compatible = "seekfree,imu";    // 自动识别IMU660RA IMU660RB IMU963RA
+            spi-max-frequency = <10000000>;
+			reg = <0>;
+		};
+
+	};
     // ----------姿态传感器---------- //
 
     // ----------舵机PWM---------- //
