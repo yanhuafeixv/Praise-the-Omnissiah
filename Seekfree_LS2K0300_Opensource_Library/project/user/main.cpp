@@ -1,31 +1,27 @@
-#include "zf_common_headfile.h"
-#include <stdio.h>
-#include <unistd.h>
-#include "encoder.h"
+#include "odometry.h"
 #include "imu.h"
+#include "encoder.h"
+#include "motor_control.h"
+#include "init.h"
+int main(void) {
+    // 1. 硬件初始化（IMU、编码器、电机等）
+    // ... 你的 all_init() 或手动初始化代码 ...
+    all_init();
+    // 2. 初始化里程计，起点 (0,0)
+    odometry_init(0.0f, 0.0f);
 
-// 声明 all_init 和 all_end
-extern int all_init(void);
-extern void all_end(void);
-
-int main(int, char**) {
-    if (all_init() != 0) {
-        printf("Initialization failed!\n");
-        return -1;
-    }
-
+    // 3. 进入控制循环（假设 10ms 一次）
     while (1) {
-        // float p, y, r;
-        // get_angle(&p, &y, &r);
-        // printf("Pitch: %.2f, Yaw: %.2f, Roll: %.2f\n", p, y, r);
-        int left;
-     left = encoder_left_get_count();
-     printf("Left Encoder Count: %d\n", left);
+        odometry_update();          // 更新坐标
 
+        float x, y, yaw;
+        get_odometry(&x, &y, &yaw); // 读取当前状态
+        printf("Current position: x=%.2f m, y=%.2f m, yaw=%.2f deg\n", x, y, yaw * (180.0f / M_PI));
+        // 在这里调用你的导航控制（如 car_goto 状态机）
+        // 根据 x, y, yaw 和目标点计算电机速度
+        // set_motor_duty(...)
 
-        system_delay_ms(200);
+        system_delay_ms(10);        // 保持约 10ms 周期
     }
-
-    all_end();
-    return 0;
+    all_end(); // 结束前清理资源（如果需要）
 }

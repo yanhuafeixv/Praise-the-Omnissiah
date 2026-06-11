@@ -4,6 +4,7 @@
 
 #include "encoder.h"
 #include "imu.h"
+#include "motor_control.h"   // 你自己的电机驱动模块
 
 int all_init(void)
 {
@@ -58,7 +59,19 @@ int all_init(void)
     pit_timer = new timer_fd(10, pit_callback);
     pit_timer->start();
 
-    return 0;  // ← 必须有返回值！
+
+
+
+    printf("=== Motor Control Test ===\n");
+
+    // 1. 初始化电机驱动
+    if (motor_control_init() != 0) {
+        printf("Motor init failed! Please check hardware.\n");
+        return -1;
+    }
+    printf("Motor init success.\n");
+
+    return 0;
 }
 
 void all_end(void)
@@ -66,4 +79,7 @@ void all_end(void)
     encoder_left_deinit();
     encoder_right_deinit();
     // 如有需要，停止定时器： pit_timer->stop(); delete pit_timer;
+        printf("Test complete, motors stop.\n");
+    motor_control_stop();
+
 }

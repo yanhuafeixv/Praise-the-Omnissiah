@@ -825,6 +825,54 @@ home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/m
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
 
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o
+
+# target to build an object file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i
+
+# target to preprocess a source file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s
+
+# target to generate assembly for a file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o
+
+# target to build an object file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i
+
+# target to preprocess a source file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s
+
+# target to generate assembly for a file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
+
 home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o
 
@@ -993,6 +1041,12 @@ help:
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s"

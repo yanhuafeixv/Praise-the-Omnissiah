@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "encoder.h"
+#include "zf_common_headfile.h"
 // ==================== 用户需根据实际硬件修改的常量 ====================
 #define ENCODER_PULSES_PER_REV   409.0f   // 编码器每转脉冲数（4倍频后）
 #define WHEEL_CIRCUMFERENCE      0.21834f    // 车轮周长，单位：米
@@ -118,4 +119,90 @@ void get_odometry(float *x, float *y, float *yaw)
     *x   = odom.x;
     *y   = odom.y;
     *yaw = odom.yaw;
+}
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+// PID结构体
+typedef struct {
+    float Kp, Ki, Kd;
+    float integral;
+    float prev_error;
+    float integral_limit;   // 积分限幅
+    float output_limit;     // 输出限幅
+} PID_t;
+
+void pid_init(PID_t *pid, float Kp, float Ki, float Kd, float i_limit, float out_limit) {
+    pid->Kp = Kp; pid->Ki = Ki; pid->Kd = Kd;
+    pid->integral = 0; pid->prev_error = 0;
+    pid->integral_limit = i_limit;
+    pid->output_limit = out_limit;
+}
+
+float pid_compute(PID_t *pid, float error, float dt) {
+    pid->integral += error * dt;
+    // 积分限幅
+    if (pid->integral > pid->integral_limit)  pid->integral = pid->integral_limit;
+    if (pid->integral < -pid->integral_limit) pid->integral = -pid->integral_limit;
+    
+    float derivative = (error - pid->prev_error) / dt;
+    pid->prev_error = error;
+    
+    float output = pid->Kp * error + pid->Ki * pid->integral + pid->Kd * derivative;
+    
+    // 输出限幅
+    if (output > pid->output_limit)  output = pid->output_limit;
+    if (output < -pid->output_limit) output = -pid->output_limit;
+    
+    return output;
+}
+
+// 目标坐标
+static float target_x = 0, target_y = 0;
+
+// 状态定义
+typedef enum {
+    STATE_IDLE,
+    STATE_MOVE_X,       // 直行调整 X
+    STATE_TURN_Y,       // 原地旋转 90°
+    STATE_MOVE_Y,       // 直行调整 Y
+    STATE_DONE
+} GotoState_t;
+
+static GotoState_t goto_state = STATE_IDLE;
+
+// 目标航向（用于直行保持）
+static float target_yaw = 0;
+
+// PID 控制器实例
+static PID_t pid_angle, pid_distance;
+
+// 参数配置
+#define ANGLE_TOLERANCE    0.02f   // 角度到达容忍度 (rad) ≈ 1.15°
+#define DISTANCE_TOLERANCE 0.02f   // 距离到达容忍度 (m) ≈ 2cm
+#define WHEEL_TRACK        0.2f    // 两轮间距 (m)，需实际测量
+#define MAX_ANGULAR_SPEED  2.0f    // 最大旋转角速度
+#define MAX_LINEAR_SPEED   0.4f    // 最大线速度
+#define CONTROL_DT          0.01f  // 控制周期 (s)，与 odometry_update 一致
+
+
+void car_goto(int x, int y) {
+    target_x = (float)x;
+    target_y = (float)y;
+    goto_state = STATE_MOVE_X;
+    
+    // 记录当前航向，作为直行 X 时的目标航向
+    float p, r;
+    get_angle(&p, &target_yaw, &r);   // 度
+    target_yaw *= M_PI / 180.0f;      // 转为弧度
+    
+    // 重置 PID 积分
+    pid_angle.integral = 0;
+    pid_angle.prev_error = 0;
+    pid_distance.integral = 0;
+    pid_distance.prev_error = 0;
+    
+    printf("goto (%d, %d)\n", x, y);
 }
