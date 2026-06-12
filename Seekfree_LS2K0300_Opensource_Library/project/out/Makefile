@@ -609,6 +609,30 @@ home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_d
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o
+
+# target to build an object file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i
+
+# target to preprocess a source file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s
+
+# target to generate assembly for a file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
+
 home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o
 
@@ -849,6 +873,30 @@ home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/m
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
 
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o
+
+# target to build an object file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i
+
+# target to preprocess a source file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
+
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s
+
+# target to generate assembly for a file
+home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
+.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
+
 home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
 .PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o
 
@@ -1014,6 +1062,9 @@ help:
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s"
@@ -1044,6 +1095,9 @@ help:
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i"
+	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i"
 	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s"

@@ -1,45 +1,80 @@
-#ifndef IMU_H
-#define IMU_H
+// #ifndef __imu_H_
+// #define __imu_H_
 
-// 包含必要头文件（让 timer_fd、imu_type 等类型可见）
-#include "zf_common_headfile.h"
+// #include "zf_common_headfile.h"
 
-// ==================== 卡尔曼滤波器类（完整定义） ====================
-class KalmanFilter {
-public:
-    float Q_angle;
-    float Q_bias;
-    float R_measure;
-    float angle;
-    float bias;
-    float P[2][2];
+// //-------------------------------------------------------------------------------------------------------------------
+// //  宏定义
+// //-------------------------------------------------------------------------------------------------------------------
+// #define YAW_DEADZONE_THRESHOLD      0.00005f                                // Yaw角单次更新死区阈值
+// #define GYRO_DEADZONE               7.0f                                    // 陀螺仪原始数据死区阈值
 
-    KalmanFilter(float q_angle = 0.001f, float q_bias = 0.003f, float r_measure = 0.03f);
+// //-------------------------------------------------------------------------------------------------------------------
+// //  结构体定义
+// //-------------------------------------------------------------------------------------------------------------------
+// typedef struct {
+//     float roll;
+//     float pitch;
+//     float yaw;
+// } IMU_Angle_typedef;
 
-    float update(float gyro_rate, float acc_angle, float dt);
-    void setAngle(float a) { angle = a; }
-};
+// typedef struct {
+//     float gyro_x;
+//     float gyro_y;
+//     float gyro_z;
+//     float acc_x;
+//     float acc_y;
+//     float acc_z;
+//     float pitch;
+//     float roll;
+//     float yaw;
+// } icm_param_t;
 
-// ==================== 外部全局变量声明 ====================
-extern KalmanFilter kf_roll;
-extern KalmanFilter kf_pitch;
-extern KalmanFilter kf_yaw;
+// typedef struct {
+//     float q0;
+//     float q1;
+//     float q2;
+//     float q3;
+// } quater_param_t;
 
-extern float roll_rad, pitch_rad, yaw_rad;
-extern float acc_x_g, acc_y_g, acc_z_g;
-extern float gyro_x_rad, gyro_y_rad, gyro_z_rad;
-extern float mag_x_gauss, mag_y_gauss, mag_z_gauss;
+// typedef struct {
+//     float Xdata;
+//     float Ydata;
+//     float Zdata;
+//     float AXdata;
+//     float AYdata;
+//     float AZdata;
+// } gyro_param_t;
 
-// ==================== 函数声明 ====================
-void calibrate_gyro_bias(int samples = 200);  // 默认参数只在声明处写一次
-void convert_to_physical();
-void compute_acc_angles(float &roll_acc, float &pitch_acc);
-void compute_mag_yaw(float roll, float pitch, float &yaw_mag);
-void get_angle(float *pitch, float *yaw, float *roll);
-void update_attitude(float dt);
-void pit_callback();
+// //-------------------------------------------------------------------------------------------------------------------
+// //  外部变量声明
+// //-------------------------------------------------------------------------------------------------------------------
+// extern IMU_Angle_typedef imu_angle;
+// extern icm_param_t       icm_data_t;
+// extern quater_param_t    Q_info;
 
-// 定时器对象指针（供 init.cpp 使用）
-extern timer_fd *pit_timer;
+// extern float             gyro_drift_x;
+// extern float             gyro_drift_y;
+// extern float             gyro_drift_z;
 
-#endif // IMU_H
+// extern float             param_Kp;
+// extern float             param_Ki;
+// extern float             CYCLE_T;
+
+// extern uint8             gyro_calibrate_flag;
+// extern uint8             gyro_offset_finished;
+
+// //-------------------------------------------------------------------------------------------------------------------
+// //  函数声明
+// //-------------------------------------------------------------------------------------------------------------------
+// void    ICM_getValues(void);
+// void    ICM_AHRSupdate(float gx, float gy, float gz, float ax, float ay, float az);
+// void    ICM_getEulerianAngles(void);
+// void    imu_transform_gyro(void);
+// void    imu_get_angle(void);
+// void    imu_zero_yaw(void);
+// void    imu_start_with_offset(float offset_deg);
+// void    ICM_zero_yaw(void);
+// void    gyro_offset_get(void);
+
+// #endif /* CODE_IMU_H_ */
