@@ -1,10 +1,10 @@
 
-// #ifndef INIT_H
-// #define INIT_H
+#ifndef INIT_H
+#define INIT_H
 
-// int all_init(void);
+int all_init(void);
 
-// void all_end();
+void all_end();
 
-// #endif
+#endif
 

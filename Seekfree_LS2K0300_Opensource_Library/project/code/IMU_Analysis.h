@@ -9,6 +9,7 @@
 #ifndef __IMU_ANALYSIS_H__
 #define __IMU_ANALYSIS_H__
 
+#include "zf_common_headfile.h"
 
 // 选择解算方法
 // 0 关闭
@@ -18,7 +19,7 @@
 // 4 [仅输出Yaw]只使用磁力计解算             -Magnetic Yaw
 // 5 [仅输出Yaw]使用Madgwick融合解算        -Madgwick AHRS
 // 6 [仅输出Yaw]使用重力投影磁修正陀螺积分    -Madgwick AHRS
-#define DEFINE_IMU_ANALYSIS_MODE       2
+#define DEFINE_IMU_ANALYSIS_MODE       2  //3轴为1，6轴为2，
 
 
 // 全局变量声明
