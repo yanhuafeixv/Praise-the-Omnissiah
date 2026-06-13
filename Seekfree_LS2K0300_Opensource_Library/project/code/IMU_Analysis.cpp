@@ -2046,7 +2046,7 @@ void IMU_Reset_Data (void)
 /*======================================================*/
 // 外部调用：获取当前姿态角（单位：度）
 void imu_get_angle(float *roll, float *yaw, float *pitch) {
-    if (roll)  *roll  = Roll_Result;    // 当前代码未解算 Roll，恒为 0
-    if (yaw)   *yaw   = Yaw_Result;    // 偏航角（度）
-    if (pitch) *pitch = Pitch_Result;   // 当前代码未解算 Pitch，恒为 0
+    if (roll)  *roll  = 10 * Roll_Result;    // 当前代码未解算 Roll，恒为 0
+    if (yaw)   *yaw   = 10 * Yaw_Result;    // 偏航角（度）
+    if (pitch) *pitch = 10 * Pitch_Result;   // 当前代码未解算 Pitch，恒为 0
 }

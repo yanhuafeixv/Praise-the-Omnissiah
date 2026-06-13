@@ -5,7 +5,7 @@
 #include "encoder.h"
 #include "motor_control.h"
 #include "IMU_Analysis.h"
-
+#include "odometry.h"
 // ==================== 磁力计开关 ====================
 // 如果你的 IMU 模式使用磁力计（DEFINE_IMU_ANALYSIS_MODE >= 3），请设为 1
 #define IMU_MAG_ENABLE  0
@@ -83,6 +83,8 @@ int all_init(void)
 
     // ---------- 初始化 IMU（包含校准和定时器启动） ----------
     imu_init();
+
+    odometry_init();
 
     return 0;
 }

@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "IMU_Analysis.h"
 #include "init.h"
+#include "encoder.h"
+#include "odometry.h"
 // 外部函数声明（init.cpp 提供）
 int main(int, char**) {
     // 一次性初始化所有硬件（编码器、电机、IMU）
@@ -8,11 +10,12 @@ int main(int, char**) {
         printf("Initialization failed!\n");
         return -1;
     }
-    float roll, yaw, pitch;
-    printf("=== IMU Test: printing angles every 200ms ===\n");
     while (1) {
-        imu_get_angle(&roll, &yaw, &pitch);
-        printf("Roll: %7.2f  Yaw: %7.2f  Pitch: %7.2f\n", roll, yaw, pitch);
+
+        odometry_update();  // 更新里程计数据（坐标和航向）
+
+        odometry_show_position();
+
         system_delay_ms(200);
     }
     // 实际上不会执行到这里
