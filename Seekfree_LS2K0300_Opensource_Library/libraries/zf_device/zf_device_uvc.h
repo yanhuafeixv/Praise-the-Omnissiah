@@ -1,22 +1,23 @@
-#ifndef _zf_driver_uvc_h
-#define _zf_driver_uvc_h
+// #ifndef _zf_driver_uvc_h
+// #define _zf_driver_uvc_h
 
 
-#include "zf_common_typedef.h"
-#include <opencv2/opencv.hpp>
+// #include "zf_common_typedef.h"
+// #include <opencv2/opencv.hpp>
 
 
-#define UVC_WIDTH   160
-#define UVC_HEIGHT  120
-#define UVC_FPS     60
+// #define UVC_WIDTH   160
+// #define UVC_HEIGHT  120
+// #define UVC_FPS     15
 
-int8 uvc_camera_init(const char *path);
-int8 wait_image_refresh();
+// int8 uvc_camera_init(const char *path);
+// int8 wait_image_refresh();
 
 
-extern uint8_t *rgay_image;
+// extern uint8_t *rgay_image;
 
-extern cv::Mat frame_rgb;      
-extern cv::Mat frame_rgay;     
+// extern cv::Mat frame_rgb;      
+// extern cv::Mat frame_rgay;     
 
-#endif
+// extern int x,y;//传出坐标
+// #endif

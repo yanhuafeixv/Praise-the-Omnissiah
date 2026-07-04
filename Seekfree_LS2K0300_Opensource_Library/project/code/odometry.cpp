@@ -4,7 +4,7 @@
 #include "encoder.h"
 #include "IMU_Analysis.h"
 // ==================== 硬件参数（根据实际小车修改） ====================
-#define WHEEL_CIRCUMFERENCE       0.21834f    // 车轮周长（米）
+#define WHEEL_CIRCUMFERENCE       0.21677f    // 车轮周长（米）
 #define ENCODER_PULSES_PER_REV    409.0f   // 编码器每转脉冲数（4 倍频后）
 // ===================================================================
 
