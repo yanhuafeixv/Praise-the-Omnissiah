@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/user
+CMAKE_SOURCE_DIR = /home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/user
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out
+CMAKE_BINARY_DIR = /home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out/CMakeFiles /home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out/CMakeFiles /home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,845 +129,845 @@ project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/build
 .PHONY : project/fast
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.cpp.s
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o
 
 # target to build an object file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.o
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i
 
 # target to preprocess a source file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.i
 
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s: home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s: home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s
 
 # target to generate assembly for a file
-home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
-.PHONY : home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
+home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
+.PHONY : home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -1002,111 +1002,111 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... project"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i"
-	@echo "... home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_fifo.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_font.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_common/zf_common_function.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_components/seekfree_assistant/seekfree_assistant_interface.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660ra.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu660rb.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu963ra.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_imu_core.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_ips200_fb.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_device/zf_device_uvc.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_adc.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_delay.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_encoder.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_file.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_gpio.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pit.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_pwm.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_tcp_client.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/libraries/zf_driver/zf_driver_udp.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/IMU_Analysis.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/arm.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/camera.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/encoder.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/flow_uart.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/hc05.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/init.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/key.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/motor_control.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/my_navigator.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/navigator.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/odometry.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/pca9685_servo.s"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.o"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.i"
+	@echo "... home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/code/serial.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

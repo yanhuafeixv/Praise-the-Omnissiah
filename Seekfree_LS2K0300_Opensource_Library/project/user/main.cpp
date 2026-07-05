@@ -31,6 +31,13 @@
 #include <unistd.h>        // 提供 usleep 延时
 #include "navigator.h"     // 包含 car_goto, navigator_update, navigator_is_done
 #include "odometry.h"      // 包含 odometry_init, odometry_update, odometry_get_position
+#include "zf_common_headfile.h"
+#include "zf_device_uvc.h"
+#include <cstdint>   // C++ 环境
+
+/*全局变量*/
+
+int x=0,y=0;
 
 
 int main(void) {
@@ -39,6 +46,10 @@ int main(void) {
         printf("Initialization failed!\n");
         return -1;
     }
+    if(uvc_camera_init("/dev/video0") < 0)//摄像头初始化
+        {
+            return -1;
+        }
 
     // 2. 初始化里程计（会将当前位置归零，并记录编码器初值）
     odometry_init();
@@ -64,6 +75,15 @@ int main(void) {
 
         // 循环间隔约 20ms，可根据实际控制周期调整
         usleep(20000);   // 20000us = 20ms
+        // if(S==1)//开启摄像头
+        // {
+             if(wait_image_refresh() < 0)//刷新获取图像，可以放在while里面，x，y读取坐标赋给机械臂
+        {
+            // 摄像头未采集到图像，这里需要关闭电机，关闭电调等。
+            exit(0);
+        }
+
+        // }
     }
 
     printf("Arrived at target successfully!\n");

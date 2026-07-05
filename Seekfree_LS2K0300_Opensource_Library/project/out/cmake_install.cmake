@@ -1,4 +1,4 @@
-# Install script for directory: /home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/user
+# Install script for directory: /home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/user
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/yingmu/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vera/LS2K0300_Library/Seekfree_LS2K0300_Opensource_Library/project/out/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

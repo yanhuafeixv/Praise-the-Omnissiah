@@ -1,28 +1,23 @@
-//大体流程差不多知道了，等摄像头到了之后，用E07，逐步尝试一下，再结合实际调试
-//目前计划：1.测试图像获取2.学习/测试二值化及轮廓get（用最简单的图像）3。实际应用中的特别处理
-//
-//
-//
-#include "zf_device_uvc.h"
+
 #include <opencv2/opencv.hpp>
 #include <vector>
 using namespace cv;
 using namespace std;
 
-// 全局固定标定参数
-Mat cameraMatrix = (Mat_<double>(3,3) <<
-    75.2345, 0.0,    80.0,
-    0.0,    75.2345, 60.0,
-    0.0,     0.0,     1.0
-);
+// Mat cameraMatrix = (Mat_<double>(3,3) <<
+//     75.2345, 0.0,    80.0,
+//     0.0,    75.2345, 60.0,
+//     0.0,     0.0,     1.0
+// );
 
-Mat distCoeffs = (Mat_<double>(5,1) <<
-    0.0456,
-   -0.0123,
-    0.0011,
-    0.0007,
-    0.0000
-);
+// Mat distCoeffs = (Mat_<double>(5,1) <<
+//     0.0456,
+//    -0.0123,
+//     0.0011,
+//     0.0007,
+//     0.0000
+// );
+
 void correct(float* camera_x,float* camera_y)
 {
     // 原始图像坐标
@@ -37,8 +32,8 @@ void correct(float* camera_x,float* camera_y)
     vector<Point2f> correct_pts;
 
     //坐标去畸变
-    undistortPoints(raw_pts, correct_pts,
-                    cameraMatrix, distCoeffs);
+ //   undistortPoints(raw_pts, correct_pts,
+ //                   cameraMatrix, distCoeffs);
 
     printf("原始坐标 camera_x=%.2f , camera_y=%.2f\n", *camera_x, *camera_y);
 
@@ -51,3 +46,23 @@ void correct(float* camera_x,float* camera_y)
  //   printf("矫正坐标 correct_x=%.2f , correct_y=%.2f\n", correct_x, correct_y);
 
 }
+
+
+    /*关于主函数中的使用*/
+/*
+if(uvc_camera_init("/dev/video0") < 0)
+    {
+        return -1;
+    }
+
+  if(wait_image_refresh() < 0)//刷新获取图像，可以放在while里面，x，y读取坐标赋给机械臂
+        {
+            // 摄像头未采集到图像，这里需要关闭电机，关闭电调等。
+            exit(0);
+        }
+
+
+
+
+
+*/
